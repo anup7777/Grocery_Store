@@ -144,19 +144,19 @@ class Userwindow:
             self.ent_pass.config(show="")
             self.ent_pass.insert(0, "Password")
 
-    #  Open customer Regestritation Page
+    #  Open customer Registration Page
 
     def open_docregpage(self):
         self.wn.destroy()
         Userregistrationwindow()
 
-        #  Opening customer Dashboard
+    #  Opening customer Dashboard
 
     def open_customer_dashboard(self, userlogin, userloginname):
         self.wn.destroy()
         Customer_interface(userlogin, userloginname)
 
-        #  Checking Credentials
+    #  Checking Credentials
 
     def checking_credentials(self):
         username = self.ent_username.get().lower()
@@ -186,7 +186,7 @@ class Userwindow:
             else:
                 messagebox.showerror("User Doesn't Exist", "Sorry you aren't registered yet")
 
-        # =================================== MENU Button ===================================#
+    #  MENU Button
 
     def show_menu(self):
         my_menu = Menu(self.wn)
@@ -195,14 +195,14 @@ class Userwindow:
         my_menu.add_cascade(label="<-- Back", menu=log_out)
         log_out.add_cascade(label="<-- Back", command=self.logout)
 
-        #  Logging out
+    #  Logging out
 
     def logout(self):
         self.wn.destroy()
         from interface.first_window import Firstwindow
         Firstwindow()
 
-        #  Forgot Password
+    #  Forgot Password
 
     def forgotpassword(self):
         messagebox.showinfo("Service Unavailable", "The system is in its inital phase."

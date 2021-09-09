@@ -119,7 +119,8 @@ class Staffregistrationwindow:
         self.my_database = MyDatabase()
         self.wn.mainloop()
 
-    #  Regestring the Staff
+    #  Registering the Staff
+
     def registering_staff(self):
         name = self.ent_staffname.get()
         username = self.ent_username.get()
@@ -129,9 +130,9 @@ class Staffregistrationwindow:
         address = self.ent_staffaddress.get()
 
         if len(name) != 0 and len(username) != 0 and len(password) != 0 and len(age) != 0 and len(gender) != 0 and len(
-                address) != 0 :
+                address) != 0:
             if age.isdigit():
-                qry = "INSERT INTO staff_credentials (Staff_Name,username,password,Staff_Age,Staff_Gender,Staff_Address,Staff_Qualification,Staff_University,Staff_Email) VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s)"
+                qry = "INSERT INTO staff_credentials (Staff_Name,username,password,Staff_Age,Staff_Gender,Staff_Address) VALUES (%s,%s,%s,%s,%s,%s)"
                 values = (name, username, password, age, gender, address)
                 self.my_database.add_update_delete(qry, values)
                 messagebox.showinfo("Registration Successful.", "Please wait until \n admin approval for login.")

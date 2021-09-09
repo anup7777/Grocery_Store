@@ -138,7 +138,7 @@ class Firstwindow:
                                     font=("Comic Sans MS", 18, "bold"), height=1, width=14)
         self.lb_login_admin.grid(row=0, column=0)
 
-        # =========================== BUTTON- ADMIN =============================#
+        #  BUTTON- ADMIN
         self.butn_login_admin = PhotoImage(file="C:\\store\\admin.png")
         self.butn_login_admin_photo = Button(self.wn, image=self.butn_login_admin,
                                         activeforeground="indigo", cursor="hand2",

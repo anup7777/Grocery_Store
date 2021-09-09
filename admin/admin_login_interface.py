@@ -151,6 +151,7 @@ class Adminwindow:
         self.wn.destroy()
         from interface.first_window import Firstwindow
         Firstwindow()
+
     #  ADMIN DASHBOARD INVOKING
     def admin_window(self):
         self.wn.destroy()

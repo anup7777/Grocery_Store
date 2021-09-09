@@ -115,7 +115,7 @@ class Userregistrationwindow:
         self.my_database = MyDatabase()
         self.wn.mainloop()
 
-    #  Regestring the Doctor
+    #  Registering the Doctor
     def registering_doc(self):
         name = self.ent_buyername.get()
         username = self.ent_username.get()
@@ -124,11 +124,12 @@ class Userregistrationwindow:
         gender = self.ent_customergender.get()
         address = self.ent_customeraddress.get()
         email = self.ent_email.get()
+
         if len(name) != 0 and len(username) != 0 and len(password) != 0 and len(age) != 0 and len(gender) != 0 and len(
-                address) != 0  and len(
-                email) != 0:
+                address) != 0 and len(
+            email) != 0:
             if age.isdigit():
-                qry = "INSERT INTO customer_credentials (customer_Name,username,password,customer_Age,customer_Gender,customer_Address,customer_Email) VALUES (%s,%s,%s,%s,%s,%s,%s)"
+                qry = "INSERT INTO customer_credentials (Customer_Name,username,password,Customer_Age,Customer_Gender,Customer_Address,Customer_Email) VALUES (%s,%s,%s,%s,%s,%s,%s)"
                 values = (name, username, password, age, gender, address, email)
                 self.my_database.add_update_delete(qry, values)
                 messagebox.showinfo("Regestration Successfull", "Please wait until \n admin approval for login")
@@ -136,7 +137,6 @@ class Userregistrationwindow:
                 messagebox.showerror("Numeric Data Needed.", "Age can't be a string value")
         else:
             messagebox.showerror("Blank Space Detected", "You can't leave any entry boxes empty.")
-
 
     #  MENU Button
     def show_menu(self):
