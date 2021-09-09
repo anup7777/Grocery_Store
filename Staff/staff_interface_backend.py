@@ -73,7 +73,7 @@ class Staffbackend:
         req_data = self.my_db.return_data_frmdatabase_wthreturn(qry, value)
         return req_data
 
-    #=============================== update staff login credential=============#
+    #=============================== update Staff login credential=============#
     def update_staff_login_data(self,providedpassword,search_value):
         qry = "UPDATE staff_credentials SET password=%s where username =%s"
         value = (providedpassword,search_value,)

@@ -46,7 +46,7 @@ class Addservice:
         self.navigation_frame = Frame(self.wn, bg="white")
         self.navigation_frame.place(x=312, y=247)
 
-        #  NAvigation0 Frame
+        #  Navigation Frame
         self.navigation_frame0 = LabelFrame(self.wn, bg="white", bd=2)
         self.navigation_frame0.place(x=1125, y=0)
 
