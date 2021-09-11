@@ -69,9 +69,11 @@ class Addservice:
         self.first_seperator.grid(row=0, column=0)
 
         # First Button
-        self.product_button = Button(self.frame2, text="Products", bg='white', fg="black", activebackground="#73C2FB",
+        self.product_button_img = PhotoImage(file="C:\\store\\productbtn.png")
+        self.product_button = Button(self.frame2, image=self.product_button_img, bg='white', fg="black", activebackground="#73C2FB",
                                      activeforeground="indigo", cursor="hand2", font=("Comic Sans MS", 14, "bold"),
-                                     height=1,width=15,command=self.product, relief=FLAT, overrelief=RIDGE)
+                                     height=50,width=190, bd=0,command=self.product, relief=FLAT, overrelief=RIDGE)
+        self.product_button.image=self.product_button_img
         self.product_button.grid(row=5, column=0, padx=58, pady=7)
 
         #  Second Seprator
@@ -80,10 +82,12 @@ class Addservice:
         self.second_seperator.grid(row=10, column=0)
 
         #  Second Button
-        self.customer_button = Button(self.frame2, text="Customers", bd=1, bg='yellow', fg="black",
+        self.customer_button_img=PhotoImage(file="C:\\store\\customerbtn.png")
+        self.customer_button = Button(self.frame2, image=self.customer_button_img, bg='white', fg="black",
                                       activebackground="#73C2FB", activeforeground="indigo", cursor="hand2",
-                                      font=("Comic Sans MS", 14, "bold"), height=1, width=15,command=self.customerboard,
-                                      relief=RIDGE, overrelief=RAISED)
+                                      font=("Comic Sans MS", 14, "bold"), height=50, width=190, bd=0,
+                                      command=self.customerboard,relief=RIDGE, overrelief=RAISED)
+        self.customer_button.image=self.customer_button_img
         self.customer_button.grid(row=20, column=0, padx=58, pady=7)
 
         # Third Seprator
@@ -92,9 +96,12 @@ class Addservice:
         self.third_seperator.grid(row=25, column=0)
 
         # Third Button
-        self.staff_button = Button(self.frame2, text="Staffs", bd=1, bg='red', fg="white", activebackground="#73C2FB",
-                                    activeforeground="indigo", font=("Comic Sans MS", 14, "bold"), height=1,
-                                    cursor="hand2", width=15,command=self.staffboard, relief=RIDGE, overrelief=RAISED)
+        self.staff_button_img=PhotoImage(file="C:\\store\\staffbtn.png")
+        self.staff_button = Button(self.frame2, image=self.staff_button_img, bg='white', fg="white",
+                                   activebackground="#73C2FB",activeforeground="indigo",
+                                   font=("Comic Sans MS", 14, "bold"),cursor="hand2",height=50, width=190, bd=0,
+                                   command=self.staffboard, relief=RIDGE, overrelief=RAISED)
+        self.staff_button.image=self.staff_button_img
         self.staff_button.grid(row=40, column=0, padx=30, pady=7)
 
         # Fourth Seprator
@@ -139,14 +146,14 @@ class Addservice:
 
         # Product Logo
         self.product_photo = PhotoImage(
-            file="C:\\store\\product_logo.png")
+            file="C:\\store\\end_photo.png")
         self.product_photo_lable = Label(self.navigation_frame0, image=self.product_photo, bg="white")
         self.product_photo_lable.image = self.product_photo
         self.product_photo_lable.grid(row=3, column=0, padx=5)
 
         #  FIRST label - NAME
         self.product_lb1 = Label(self.navigation_frame, text="Name of the Product", bg="white",
-                                 font=('Arial', 12, 'bold'), fg='Black')
+                                 font=('Arial', 12, 'bold'), fg='Black',)
         self.product_lb1.grid(row=2, column=1, padx=5, pady=10)
 
         #  SECEOND label - TYPE
@@ -214,46 +221,46 @@ class Addservice:
 
         #  ADD Button with picture inserted
         self.product_addbutton_img = PhotoImage(
-            file="C:\\store\\addbutton.png")
+            file="C:\\store\\addbtn.png")
         self.product_addbutton = Button(self.navigation_frame, image=self.product_addbutton_img,
                                         command=self.addproduct, bg="white", fg="black", font=("arial", 15),
-                                        height=25, width=95)
+                                        height=30, width=100, bd=0)
         self.product_addbutton.image = self.product_addbutton_img
         self.product_addbutton.grid(row=15, column=2, padx=10, pady=14)
 
         # SHOW Button with picture inserted
         self.product_showbutton_img = PhotoImage(
-            file="C:\\store\\showbutton.png")
+            file="C:\\store\\showbtn.png")
         self.product_showbutton = Button(self.navigation_frame, image=self.product_showbutton_img,
                                          command=self.showitemintree_productdata, bg="white", fg="black",
-                                         font=("arial", 15), height=37, width=145)
+                                         font=("arial", 15), height=37, width=145,bd=0)
         self.product_showbutton.image = self.product_showbutton_img
         self.product_showbutton.grid(row=1, column=1, columnspan=3, padx=331, pady=14)
 
         #  UPDATE Button with picture inserted
         self.product_updatebutton_img = PhotoImage(
-            file="C:\\store\\updatebutton.png")
+            file="C:\\store\\updatebtn.png")
         self.product_updatebutton = Button(self.navigation_frame, image=self.product_updatebutton_img,
                                            command=self.product_updatefrntend, bg="white", fg="black",
-                                           font=("arial", 15), height=25, width=95)
+                                           font=("arial", 15), height=30, width=100, bd=0)
         self.product_updatebutton.image = self.product_updatebutton_img
         self.product_updatebutton.grid(row=15, column=1, padx=10, pady=14)
 
         #  DELETE Button with picture inserted
         self.product_deletebutton_img = PhotoImage(
-            file="C:\\store\\deletebutton.png")
+            file="C:\\store\\deletebtn.png")
         self.product_deletebutton = Button(self.navigation_frame, image=self.product_deletebutton_img,
                                            command=self.deleteproduct, bg="white", fg="black", font=("arial", 15),
-                                           height=25, width=95)
+                                           height=30, width=100, bd=0)
         self.product_deletebutton.image = self.product_deletebutton_img
         self.product_deletebutton.grid(row=15, column=1, columnspan=2, padx=10, pady=14)
 
         # SEARCH Button with picture inserted
         self.product_searchbutton_img = PhotoImage(
-            file="C:\\store\\searchbuton.png")
+            file="C:\\store\\searchbtn.png")
         self.product_searchbutton = Button(self.navigation_frame0, image=self.product_searchbutton_img,
                                            command=self.productsearch, bg="white", fg="black", font=("arial", 15),
-                                           height=25, width=95)
+                                           height=50, width=190, bd=0)
         self.product_searchbutton.image = self.product_searchbutton_img
         self.product_searchbutton.grid(row=6, column=0, padx=10, pady=10)
 
@@ -404,7 +411,7 @@ class Addservice:
         while self.data <= 790:
             self.seperator = Canvas(self.navigation_frame, width=5, height=1, bd=0, highlightthickness=0)
             self.seperator.configure(bg="black")
-            self.seperator.place(x=self.data, y=55)
+            self.seperator.place(x=self.data, y=52)
             self.data += 10
 
         # Customer Logo
@@ -510,39 +517,39 @@ class Addservice:
 
         # SHOW Button with picture inserted
         self.customerboard_showbutton_img = PhotoImage(
-            file="C:\\store\\showbutton.png")
+            file="C:\\store\\showbtn.png")
         self.customerboard_showbutton = Button(self.navigation_frame, image=self.customerboard_showbutton_img,
                                                command=self.showitemintree_customerdata, bg="white", fg="black",
-                                               font=("arial", 15), height=40, width=120)
+                                               font=("arial", 15), height=37, width=145,bd=0)
         self.customerboard_showbutton.image = self.customerboard_showbutton_img
         self.customerboard_showbutton.grid(row=1, column=1, columnspan=3, padx=344, pady=5)
 
         # UPDATE Button with picture inserted
         self.customerboard_updatebutton_img = PhotoImage(
-            file="C:\\store\\updatebutton.png")
+            file="C:\\store\\updatebtn.png")
         self.customerboard_updatebutton = Button(self.navigation_frame, image=self.customerboard_updatebutton_img,
                                                  command=self.customer_status_updatefrntend, bg="white", fg="black",
-                                                 font=("arial", 15), height=25, width=95)
+                                                 font=("arial", 15), height=30, width=100,bd=0)
         self.customerboard_updatebutton.image = self.customerboard_updatebutton_img
         self.customerboard_updatebutton.grid(row=15, column=2, padx=10, pady=12)
 
         #  DELETE Button with picture inserted
         self.customerboard_deletebutton_img = PhotoImage(
-            file="C:\\store\\deletebutton.png")
+            file="C:\\store\\deletebtn.png")
         self.customerboard_deletebutton = Button(self.navigation_frame, image=self.customerboard_deletebutton_img,
                                                  command=self.deletecustomers, bg="white", fg="black",
                                                  font=("arial", 15),
-                                                 height=25, width=95)
+                                                 height=30, width=100,bd=0)
         self.customerboard_deletebutton.image = self.customerboard_deletebutton_img
         self.customerboard_deletebutton.grid(row=15, column=1, padx=10, pady=12)
 
         #  SEARCH Button with picture inserted
         self.customerboard_searchbutton_img = PhotoImage(
-            file="C:\\store\\searchbuton.png")
+            file="C:\\store\\searchbtn.png")
         self.customerboard_searchbutton = Button(self.navigation_frame0, image=self.customerboard_searchbutton_img,
                                                  command=self.customersearch, bg="white", fg="black",
                                                  font=("arial", 15),
-                                                 height=25, width=95)
+                                                 height=50, width=190, bd=0)
         self.customerboard_searchbutton.image = self.customerboard_searchbutton_img
         self.customerboard_searchbutton.grid(row=6, column=0, pady=10)
 
@@ -665,7 +672,7 @@ class Addservice:
         while self.data <= 790:
             self.seperator = Canvas(self.navigation_frame, width=5, height=1, bd=0, highlightthickness=0)
             self.seperator.configure(bg="black")
-            self.seperator.place(x=self.data, y=65)
+            self.seperator.place(x=self.data, y=62)
             self.data += 10
 
         # Staff  Logo
@@ -746,37 +753,37 @@ class Addservice:
 
         # SHOW Button with picture inserted
         self.staffboard_showbutton_img = PhotoImage(
-            file="C:\\store\\showbutton.png")
+            file="C:\\store\\showbtn.png")
         self.staffboard_showbutton = Button(self.navigation_frame, image=self.staffboard_showbutton_img,
                                             command=self.showitemintree_staffdata, bg="white", fg="black",
-                                            font=("arial", 15), height=40, width=120)
+                                            font=("arial", 15), height=37, width=145, bd=0)
         self.staffboard_showbutton.image = self.staffboard_showbutton_img
         self.staffboard_showbutton.grid(row=1, column=1, columnspan=3, padx=344, pady=10)
 
         #  UPDATE Button with picture inserted
         self.staffboard_updatebutton_img = PhotoImage(
-            file="C:\\store\\updatebutton.png")
+            file="C:\\store\\updatebtn.png")
         self.staffboard_updatebutton = Button(self.navigation_frame, image=self.staffboard_updatebutton_img,
                                               command=self.staff_status_updatefrntend, bg="white", fg="black",
-                                              font=("arial", 15), height=25, width=95)
+                                              font=("arial", 15), height=30, width=100, bd=0)
         self.staffboard_updatebutton.image = self.staffboard_updatebutton_img
         self.staffboard_updatebutton.grid(row=22, column=2, padx=10, pady=15)
 
         #  DELETE Button with picture inserted
         self.staffboard_deletebutton_img = PhotoImage(
-            file="C:\\store\\deletebutton.png")
+            file="C:\\store\\deletebtn.png")
         self.staffboard_deletebutton = Button(self.navigation_frame, image=self.staffboard_deletebutton_img,
                                               command=self.deletestaffs, bg="white", fg="black", font=("arial", 15),
-                                              height=25, width=95)
+                                              height=30, width=100, bd=0)
         self.staffboard_deletebutton.image = self.staffboard_deletebutton_img
         self.staffboard_deletebutton.grid(row=22, column=1, padx=10, pady=15)
 
         # SEARCH Button with picture inserted
         self.staffboard_searchbutton_img = PhotoImage(
-            file="C:\\store\\searchbuton.png")
+            file="C:\\store\\searchbtn.png")
         self.staffboard_searchbutton = Button(self.navigation_frame0, image=self.staffboard_searchbutton_img,
                                               command=self.staffsearch, bg="white", fg="black", font=("arial", 15),
-                                              height=25, width=95)
+                                              height=50, width=190, bd=0)
         self.staffboard_searchbutton.image = self.staffboard_searchbutton_img
         self.staffboard_searchbutton.grid(row=6, column=0, padx=10, pady=10)
 
@@ -919,7 +926,7 @@ class Addservice:
     #  END PHOTO
     def endphoto(self):
         self.photo00 = PhotoImage(
-            file="C:\\store\\end_photo.png")
+            file="C:\\store\\product_logo.png")
         self.photo_lable00 = Label(self.navigation_frame0, image=self.photo00, bg="white")
         self.photo_lable00.image = self.photo00
         self.photo_lable00.grid(row=8, column=0, padx=5, pady=43)
