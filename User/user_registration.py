@@ -115,7 +115,7 @@ class Userregistrationwindow:
         self.my_database = MyDatabase()
         self.wn.mainloop()
 
-    #  Registering the Doctor
+    #  Registering the Customer
     def registering_doc(self):
         name = self.ent_buyername.get()
         username = self.ent_username.get()
@@ -131,6 +131,7 @@ class Userregistrationwindow:
             if age.isdigit():
                 qry = "INSERT INTO customer_credentials (Customer_Name,username,password,Customer_Age,Customer_Gender,Customer_Address,Customer_Email) VALUES (%s,%s,%s,%s,%s,%s,%s)"
                 values = (name, username, password, age, gender, address, email)
+                print("Data added")
                 self.my_database.add_update_delete(qry, values)
                 messagebox.showinfo("Regestration Successfull", "Please wait until \n admin approval for login")
             else:

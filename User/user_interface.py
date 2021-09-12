@@ -23,13 +23,13 @@ class Customer_interface:
 
         #  Necessary Frames
         self.frame1 = LabelFrame(self.wn, bg="white")
-        self.frame1.place(x=0, y=270)
+        self.frame1.place(x=0, y=150)
         self.entry_frame = Frame(self.wn, bg="white")
         self.entry_frame.place(x=300, y=20)
         self.tree_frame = LabelFrame(self.wn, bg="white", bd=2)
-        self.tree_frame.place(x=285, y=0)
+        self.tree_frame.place(x=500, y=0)
         self.navigation_frame = LabelFrame(self.wn, bg="white")
-        self.navigation_frame.place(x=285, y=247)
+        self.navigation_frame.place(x=500, y=247)
         self.navigation_frame0 = LabelFrame(self.wn, bg="white", bd=2)
         self.navigation_frame0.place(x=1100, y=0)
 
@@ -53,7 +53,7 @@ class Customer_interface:
                                          command=self.change_customer_credentials, font=("Comic Sans MS", 15, "bold"),
                                          height=1,
                                          width=15, relief=RIDGE, overrelief=RAISED)
-        self.credentials_button.grid(row=5, column=0, padx=10, pady=35)
+        self.credentials_button.grid(row=5, column=0, padx=10, pady=70)
 
         self.show_menu()
         self.wn.mainloop()
