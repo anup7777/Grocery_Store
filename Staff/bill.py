@@ -471,8 +471,6 @@ class Bill_App:
         admin_pass1 = Entry(F9, width=18, textvariable=self.admin_pass, font="arial 10 bold", bd=7, relief=SUNKEN,
                             show='X').grid(row=0, column=4, sticky=E)
 
-        a_login = Button(F9, text="Login", command=self.login_page, bg="cyan", bd=5, fg="black", width=12,
-                         font="arial 12 bold").grid(row=0, column=5, padx=35)
 
         # -------sign up----------------
         Label(F9, text="  Create New Account", font=("times new roman", 15, "bold"), fg="black", bg="dark orange").grid(
@@ -821,22 +819,6 @@ class Bill_App:
     def check_mail(self):
         txt_msg = self.bill_app()
         messagebox.showinfo("Sent", f"Bill No. :{self.bill_no.get()} Sent successfuly")
-
-    def login_page(self):
-        ad_id = self.admin_id.get()
-        ad_pass = self.admin_pass.get()
-        if (ad_id == "crpshop123"):
-            if (ad_pass == "123456789"):
-                global login_window
-                login_window = Tk()
-
-                obj1 = login_page_window(login_window)
-
-                login_window.mainloop()
-            else:
-                messagebox.showerror("Error", "invalid password")
-        else:
-            messagebox.showerror("Error", "invalid User id")
 
 
 
