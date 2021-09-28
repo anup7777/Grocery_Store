@@ -6,6 +6,7 @@ from PIL import Image,ImageTk
 import time as tm
 import datetime
 from User.user_interface_backend import Customerbackend
+from User.user_cart import cart
 
 
 class Customer_interface:
@@ -20,6 +21,7 @@ class Customer_interface:
         self.customer_backend = Customerbackend()
         self.lastuserloggedin = customerloggedin
         self.lastuserloggedinname = customerloggedinname
+
 
         #  Necessary Frames
         self.frame1 = LabelFrame(self.wn, bg="white")
@@ -45,6 +47,9 @@ class Customer_interface:
         self.frame2 = LabelFrame(self.wn, bg="white", borderwidth=2)
         self.frame2.place(x=0, y=350)
 
+        self.frame3 = LabelFrame(self.wn, bg="white", borderwidth=2)
+        self.frame3.place(x=250, y=350)
+
         # Creating Seprator and Buttons
 
         # First Button
@@ -55,10 +60,17 @@ class Customer_interface:
                                          width=15, relief=RIDGE, overrelief=RAISED)
         self.credentials_button.grid(row=5, column=0, padx=10, pady=70)
 
+        self.cart_button = Button(self.frame3, text="View Items", bg='green', fg="white",
+                                         activebackground="#73C2FB", activeforeground="indigo", cursor="hand2",
+                                         command= self.show_items, font=("Comic Sans MS", 15, "bold"),
+                                         height=1,
+                                         width=15, relief=RIDGE, overrelief=RAISED)
+        self.cart_button.grid(row=5, column=100, padx=10, pady=70)
+
         self.show_menu()
         self.wn.mainloop()
 
-        # Menu Button
+        # Menu Buttonrubi11
 
     def show_menu(self):
         my_menu = Menu(self.wn)
@@ -228,5 +240,12 @@ class Customer_interface:
         self.wn.destroy()
         from interface.first_window import Firstwindow
         Firstwindow()
+
+    def show_items(self):
+        self.wn.destroy()
+        cart()
+
+
+
 
 
