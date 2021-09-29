@@ -8,6 +8,10 @@ class Staffregistrationwindow:
         self.wn=Tk()
         self.wn.title("Staff Registration")
         self.wn.geometry("1350x735+0+0")
+        # adding icon image
+        self.img = (Image.open("C:\\store\\staff_icon.jpg"))
+        self.icoimg = ImageTk.PhotoImage(self.img)
+        self.wn.iconphoto(False, self.icoimg)
         self.wn.resizable(False,False)
         self.show_menu()
 

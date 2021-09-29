@@ -9,6 +9,10 @@ class Userregistrationwindow:
     def __init__(self):
         self.wn=Tk()
         self.wn.title("User Registration")
+        # adding icon image
+        self.img = (Image.open("C:\\store\\user_i.ico"))
+        self.icoimg = ImageTk.PhotoImage(self.img)
+        self.wn.iconphoto(False, self.icoimg)
         self.wn.geometry("1370x735+0+0")
         self.wn.resizable(False,False)
         self.show_menu()

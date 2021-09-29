@@ -12,6 +12,10 @@ class Addservice:
         self.wn = Tk()
         self.wn.title("Admin Panel")
         self.wn.geometry("1350x700+0+0")
+        # adding icon image
+        self.img = (Image.open("C:\\store\\admin_icon.png"))
+        self.icoimg = ImageTk.PhotoImage(self.img)
+        self.wn.iconphoto(False, self.icoimg)
         self.wn.configure(bg="white")
         self.wn.resizable(False, False)
 

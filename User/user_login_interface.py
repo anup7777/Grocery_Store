@@ -11,6 +11,10 @@ class Userwindow:
     def __init__(self):
         self.wn=Tk()
         self.wn.title("Customer Login")
+        # adding icon image
+        self.img = (Image.open("C:\\store\\user_i.ico"))
+        self.icoimg = ImageTk.PhotoImage(self.img)
+        self.wn.iconphoto(False, self.icoimg)
         self.wn.geometry("1300x700+0+0")
         self.wn.resizable(False,False)
         self.my_db = MyDatabase()

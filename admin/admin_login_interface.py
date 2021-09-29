@@ -10,6 +10,10 @@ class Adminwindow:
         self.wn=Tk()
         self.wn.title("Admin Login")
         self.wn.geometry("1370x735+0+0")
+        # adding icon image
+        self.img = (Image.open("C:\\store\\admin_icon.png"))
+        self.icoimg = ImageTk.PhotoImage(self.img)
+        self.wn.iconphoto(False, self.icoimg)
         self.wn.resizable(False,False)
         self.my_db=MyDatabase()
         self.admin_backend=Adminbackend()

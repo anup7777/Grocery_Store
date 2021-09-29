@@ -1,6 +1,7 @@
 from tkinter import *
 import math,random
 from tkinter import messagebox
+from PIL import Image, ImageTk
 import os
 import smtplib
 from tkinter import Tk, Label, Frame, Entry, Button
@@ -13,6 +14,10 @@ class Bill_App:
         self.master = master
         self.master.geometry("1350x700")
         self.master.title("grocery management system")
+        # adding icon image
+        self.img = (Image.open("C:\\store\\staff_icon.jpg"))
+        self.icoimg = ImageTk.PhotoImage(self.img)
+        self.master.iconphoto(False, self.icoimg)
 
         title = Label(self.master, text="BILL", bd=12, relief=GROOVE, bg="dark orange",
                       font=("times new roman", 30, "bold"), pady=2).pack(fill=X)
@@ -317,7 +322,7 @@ class Bill_App:
 
 
         b1_label = Label(F5, text="bread", font=("times new roman", 16, "bold"), fg="black",
-                               bg="dark orange").grid(row=0, column=1, padx=10, pady=10, sticky="w")
+                               bg="dark orange").grid(row=0, column=0, padx=10, pady=10, sticky="w")
         b1_txt = Entry(F5, width=4, textvariable=self.bread, font=("times new roman", 16, "bold"), bd=5,
                        relief=SUNKEN).grid(row=0, column=1, padx=10, pady=10, sticky=W)
         # crossiant

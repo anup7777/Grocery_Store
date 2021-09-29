@@ -15,6 +15,10 @@ class Customer_interface:
     def __init__(self, customerloggedin, customerloggedinname):
         self.wn = Tk()
         self.wn.title("Customer Panel")
+        # adding icon image
+        self.img = (Image.open("C:\\store\\user_i.ico"))
+        self.icoimg = ImageTk.PhotoImage(self.img)
+        self.wn.iconphoto(False, self.icoimg)
         self.wn.geometry("1370x735+0+0")
         self.wn.configure(bg="white")
         self.wn.resizable(False, False)

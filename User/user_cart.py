@@ -6,7 +6,11 @@ from admin.connection import MyDatabase
 class cart():
     def __init__(self):
         self.wn = Tk()
-        self.wn.title("Homepage")
+        self.wn.title("Customer_Cart")
+        # adding icon image
+        self.img = (Image.open("C:\\store\\user_i.ico"))
+        self.icoimg = ImageTk.PhotoImage(self.img)
+        self.wn.iconphoto(False, self.icoimg)
         self.wn.geometry('1350x700')
         self.wn.resizable(False, False)
 
