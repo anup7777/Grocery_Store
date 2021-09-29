@@ -14,7 +14,7 @@ class Adminbackend:
             else:
                 return False
 
-        #  Product
+    #  Product
 
     def product_backend_showdata(self):
         product_data = []
@@ -46,7 +46,7 @@ class Adminbackend:
         self.my_db.add_update_delete(qry, value)
         return True
 
-        # Customer
+    # Customer
 
     def customer_backend_showdata(self):
         customer_data = []
@@ -74,7 +74,7 @@ class Adminbackend:
         self.my_db.add_update_delete(qry, value)
         return True
 
-        # Staff
+    # Staff
 
     def staff_backend_showdata(self):
         staff_data = []

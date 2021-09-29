@@ -1,4 +1,3 @@
-
 from tkinter import *
 import math,random
 from tkinter import messagebox
@@ -20,7 +19,7 @@ class Bill_App:
 
 
 
-        #    variable ---------------------------------------
+        #    variable
 
         #   snack & crackers
         self.pringles = IntVar()
@@ -734,7 +733,7 @@ class Bill_App:
 
     def clear_data(self):
         #   snacks & crackers variable
-        op = messagebox.askyesno("Exit", "Do you want to Exit")
+        op = messagebox.askyesno("Clear", "Do you want to Clear")
         if op > 0:
             self.pringles.set(0)
             self.lays.set(0)
@@ -812,7 +811,7 @@ class Bill_App:
     def exit_app(self):
         op1 = messagebox.askyesno("Exit", "Do you want to Exit")
         if op1 > 0:
-            root.destroy()
+            self.master.destroy()
         else:
             return
 
@@ -881,11 +880,4 @@ class Bill_App:
         # os.startfile('stock.csv','r')
         p = Popen('stock.csv', shell=True)
 
-
-global root
-root = Tk()
-
-# obj=login_page_window(root)
-obj = Bill_App(root)
-root.mainloop()
 

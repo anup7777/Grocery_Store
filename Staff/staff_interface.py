@@ -7,7 +7,7 @@ from PIL import Image,ImageTk
 import time as tm
 import datetime
 from Staff.staff_interface_backend import Staffbackend
-
+from Staff.bill import Bill_App
 
 class Staff_interface:
 
@@ -45,16 +45,29 @@ class Staff_interface:
         self.frame2 = LabelFrame(self.wn, bg="white")
         self.frame2.place(x=1, y=350)
 
+        self.frame3 = LabelFrame(self.wn, bg="white", borderwidth=2)
+        self.frame3.place(x=250, y=350)
+
         # First Button
         self.credentials_button = Button(self.frame2, text="Credentials", bg='green', fg="white",
                                          activebackground="#73C2FB", activeforeground="indigo", cursor="hand2",
-                                         command=self.change_staff_credentials, font=("Comic Sans MS", 15, "bold"),
+                                         command=self.change_staff_credentials,font=("Comic Sans MS", 15, "bold"),
                                          height=1,
                                          width=15, relief=RIDGE, overrelief=RAISED)
         self.credentials_button.grid(row=5, column=0, padx=10, pady=70)
 
+        self.bill_button = Button(self.frame3, text="Bill", bg='green', fg="white",
+                                         activebackground="#73C2FB", activeforeground="indigo", cursor="hand2",
+                                         command= self.bill, font=("Comic Sans MS", 15, "bold"),
+                                         height=1,
+                                         width=15, relief=RIDGE, overrelief=RAISED)
+        self.bill_button.grid(row=5, column=100, padx=10, pady=70)
+
+
+
         self.show_menu()
         self.wn.mainloop()
+
 
     #   Changing Credentials
     def change_staff_credentials(self):
@@ -184,6 +197,11 @@ class Staff_interface:
         self.wn.destroy()
         from interface.first_window import Firstwindow
         Firstwindow()
+
+    def bill(self):
+        self.wn.destroy()
+        Bill_App(Tk())
+
 
 
 

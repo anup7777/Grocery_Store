@@ -516,7 +516,8 @@ class Addservice:
         self.customerboard_tree.heading('Admin Approval', text="Admin Approval")
 
         # SHOW Button with picture inserted
-        self.customerboard_showbutton_img = PhotoImage(
+        self.customerboard_showbutton_img\
+            = PhotoImage(
             file="C:\\store\\showbtn.png")
         self.customerboard_showbutton = Button(self.navigation_frame, image=self.customerboard_showbutton_img,
                                                command=self.showitemintree_customerdata, bg="white", fg="black",

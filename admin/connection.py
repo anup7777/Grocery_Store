@@ -2,11 +2,11 @@ import mysql.connector
 
 class MyDatabase:
     def __init__(self):
-        self.my_connection = mysql.connector.connect(user="root",password="rubinasql123",host="127.0.0.1",port="3306",database="grocery_store")
+        self.my_connection = mysql.connector.connect(user="root",password="root",host="127.0.0.1",port="3306",database="grocery_store_system")
         self.my_cursor = self.my_connection.cursor()
         self.fetchingdata_login()
 
-    # = FETCHING DATA FOR ADMIN LOGIN PAGE
+    #  FETCHING DATA FOR ADMIN LOGIN PAGE
     def fetchingdata_login(self):
         try:
             qry = "SELECT admin_credentials.admin_username, admin_credentials.admin_password FROM admin_credentials"
