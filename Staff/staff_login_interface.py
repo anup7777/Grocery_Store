@@ -26,7 +26,7 @@ class Staffwindow:
         self.title_photo_lable.place(x=0, y=0)
 
         self.title10_photo = PhotoImage(file="C:\\store\\monitor.png")
-        self.title10_photo_lable = Label(self.wn, image=self.title10_photo, bd=0)
+        self.title10_photo_lable = Label(self.wn, image=self.title10_photo, bd=0, bg="orange")
         self.title10_photo_lable.image = self.title10_photo
         self.title10_photo_lable.place(x=550, y=155)
 
@@ -44,7 +44,7 @@ class Staffwindow:
         self.title03_photo_lable.image = self.title03_photo
 
         self.title0_photo = PhotoImage(file="C:\\store\\mobile.png")
-        self.title0_photo_lable = Label(self.wn, image=self.title0_photo, bd=0)
+        self.title0_photo_lable = Label(self.wn, image=self.title0_photo, bg="orange" ,bd=0)
         self.title0_photo_lable.image = self.title0_photo
         self.title0_photo_lable.place(x=20, y=10)
 

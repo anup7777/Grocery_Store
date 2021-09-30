@@ -28,6 +28,11 @@ class Staff_interface:
         self.update_index0=""
         self.update_index1=""
 
+        self.title_photo = PhotoImage(file="C:\\store\\customerbg.png")
+        self.title_photo_lable = Label(self.wn, image=self.title_photo, bd=0)
+        self.title_photo_lable.image = self.title_photo
+        self.title_photo_lable.place(x=0, y=0)
+
         #  Necessary Frames
         self.frame1 = LabelFrame(self.wn, bg="white")
         self.frame1.place(x=1, y=150)
@@ -39,12 +44,12 @@ class Staff_interface:
         self.navigation_frame0.place(x=1100, y=0)
 
         # Major Heading
-        self.lb_heading_inital = Label(self.frame1, text="Staff", bg="white", font=('Impact', 34, 'bold', 'underline'),
+        self.lb_heading_inital = Label(self.wn, text="Staff", bg="pink", font=('Impact', 34, 'bold', 'underline'),
                                        fg='red')
-        self.lb_heading_inital.grid(row=20, column=40, padx=15, pady=10)
-        self.lb_heading_end = Label(self.frame1, text="Panel", bg="white", font=('Impact', 34, 'bold', 'underline'),
+        self.lb_heading_inital.place(x=90, y=120)
+        self.lb_heading_end = Label(self.wn, text="Panel", bg="pink", font=('Impact', 34, 'bold', 'underline'),
                                     fg='blue')
-        self.lb_heading_end.grid(row=20, column=80, padx=17, pady=10)
+        self.lb_heading_end.place(x=200, y=120)
 
         #  Creating Frame-2
         self.frame2 = LabelFrame(self.wn, bg="white")
@@ -54,19 +59,19 @@ class Staff_interface:
         self.frame3.place(x=250, y=350)
 
         # First Button
-        self.credentials_button = Button(self.frame2, text="Credentials", bg='green', fg="white",
+        self.credentials_button = Button(self.wn, text="Credentials", bg='green', fg="white",
                                          activebackground="#73C2FB", activeforeground="indigo", cursor="hand2",
                                          command=self.change_staff_credentials,font=("Comic Sans MS", 15, "bold"),
                                          height=1,
                                          width=15, relief=RIDGE, overrelief=RAISED)
-        self.credentials_button.grid(row=5, column=0, padx=10, pady=70)
+        self.credentials_button.place(x=70, y=230)
 
-        self.bill_button = Button(self.frame3, text="Bill", bg='green', fg="white",
+        self.bill_button = Button(self.wn, text="Bill", bg='green', fg="white",
                                          activebackground="#73C2FB", activeforeground="indigo", cursor="hand2",
                                          command= self.bill, font=("Comic Sans MS", 15, "bold"),
                                          height=1,
                                          width=15, relief=RIDGE, overrelief=RAISED)
-        self.bill_button.grid(row=5, column=100, padx=10, pady=70)
+        self.bill_button.place(x=70, y=350)
 
 
 

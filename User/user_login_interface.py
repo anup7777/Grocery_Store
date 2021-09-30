@@ -26,7 +26,7 @@ class Userwindow:
         self.title_photo_lable.place(x=0, y=-20)
 
         self.title04_photo = PhotoImage(file="C:\\store\\monitor.png")
-        self.title04_photo_lable = Label(self.wn, image=self.title04_photo,bd=0)
+        self.title04_photo_lable = Label(self.wn, image=self.title04_photo,bd=0, bg="orange")
         self.title04_photo_lable.image = self.title04_photo
         self.title04_photo_lable.place(x=550, y=155)
 
@@ -44,7 +44,7 @@ class Userwindow:
         self.title01_photo_lable.place(x=565, y=175)
 
         self.title0_photo = PhotoImage(file="C:\\store\\mobile.png")
-        self.title0_photo_lable = Label(self.wn, image=self.title0_photo, bd=0)
+        self.title0_photo_lable = Label(self.wn, image=self.title0_photo, bg="orange", bd=0)
         self.title0_photo_lable.image = self.title0_photo
         self.title0_photo_lable.place(x=20, y=10)
 

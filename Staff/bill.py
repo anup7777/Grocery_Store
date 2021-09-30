@@ -13,7 +13,7 @@ class Bill_App:
     def __init__(self, master):
         self.master = master
         self.master.geometry("1350x700")
-        self.master.title("grocery management system")
+        self.master.title("Bill")
         # adding icon image
         self.img = (Image.open("C:\\store\\staff_icon.jpg"))
         self.icoimg = ImageTk.PhotoImage(self.img)

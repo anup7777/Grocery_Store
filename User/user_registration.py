@@ -24,12 +24,12 @@ class Userregistrationwindow:
         self.background_lable.place(x=0, y=0)
 
         self.title0_photo = PhotoImage(file="C:\\store\\mobile.png")
-        self.title0_photo_lable = Label(self.wn, image=self.title0_photo, bd=0)
+        self.title0_photo_lable = Label(self.wn, image=self.title0_photo, bg="orange", bd=0)
         self.title0_photo_lable.image = self.title0_photo
         self.title0_photo_lable.place(x=50, y=10)
 
         self.title0_photo = PhotoImage(file="C:\\store\\register.png")
-        self.title0_photo_lable = Label(self.wn, image=self.title0_photo, bd=0)
+        self.title0_photo_lable = Label(self.wn, image=self.title0_photo, bg="orange", bd=0)
         self.title0_photo_lable.image = self.title0_photo
         self.title0_photo_lable.place(x=700, y=10)
 
