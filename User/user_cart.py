@@ -114,7 +114,7 @@ class cart():
         self.image11 = ImageTk.PhotoImage(self.img11)
         self.label11 = Label(self.wn,image = self.image11,bg="black")
         self.label11.place(x=960,y=140)
-        self.lbl11= Label (self.wn, text="   BISCUIT    \nRs.50 / Packet",font=("Arial",12),bg="#FDFC96")
+        self.lbl11= Label (self.wn, text="   POTATA    \nRs.50 / Packet",font=("Arial",12),bg="#FDFC96")
         self.lbl11.place(x=960,y=225)
 
         self.img12 = Image.open("C:\\store\\oreo.jpg")

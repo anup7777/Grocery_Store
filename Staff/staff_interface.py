@@ -15,7 +15,7 @@ class Staff_interface:
     def __init__(self,staffloggedin):
         self.wn = Tk()
         self.wn.title("Staff Panel")
-        self.wn.geometry("1350x700+0+0")
+        self.wn.geometry("1350x735+0+0")
         # adding icon image
         self.img = (Image.open("C:\\store\\staff_icon.jpg"))
         self.icoimg = ImageTk.PhotoImage(self.img)
@@ -35,11 +35,14 @@ class Staff_interface:
 
         #  Necessary Frames
         self.frame1 = LabelFrame(self.wn, bg="white")
-        self.frame1.place(x=1, y=150)
+        self.frame1.place(x=100, y=70)
+
         self.tree_frame = Frame(self.wn, bg="white")
-        self.tree_frame.place(x=500, y=0)
+        self.tree_frame.place(x=430, y=130)
+
         self.navigation_frame = Frame(self.wn, bg="white")
-        self.navigation_frame.place(x=500, y=247)
+        self.navigation_frame.place(x=430, y=190)
+
         self.navigation_frame0 = LabelFrame(self.wn, bg="white", bd=2)
         self.navigation_frame0.place(x=1100, y=0)
 
@@ -59,21 +62,23 @@ class Staff_interface:
         self.frame3.place(x=250, y=350)
 
         # First Button
-        self.credentials_button = Button(self.wn, text="Credentials", bg='green', fg="white",
-                                         activebackground="#73C2FB", activeforeground="indigo", cursor="hand2",
-                                         command=self.change_staff_credentials,font=("Comic Sans MS", 15, "bold"),
-                                         height=1,
-                                         width=15, relief=RIDGE, overrelief=RAISED)
-        self.credentials_button.place(x=70, y=230)
+        self.credentials_button = PhotoImage(file="C:\\store\\credentialsbtn.png")
+        self.credentials = Button(self.wn, image=self.credentials_button, bd=0, bg='pink', fg="white",
+                                  activebackground="#73C2FB", activeforeground="indigo",
+                                  font=("Comic Sans MS", 14, "bold"), height=50, cursor="hand2",
+                                  command=self.change_staff_credentials, width=230, relief=RIDGE,
+                                  overrelief=RAISED)
+        self.credentials.image = self.credentials_button
+        self.credentials.place(x=70, y=230)
 
-        self.bill_button = Button(self.wn, text="Bill", bg='green', fg="white",
-                                         activebackground="#73C2FB", activeforeground="indigo", cursor="hand2",
-                                         command= self.bill, font=("Comic Sans MS", 15, "bold"),
-                                         height=1,
-                                         width=15, relief=RIDGE, overrelief=RAISED)
-        self.bill_button.place(x=70, y=350)
-
-
+        self.billbutton = PhotoImage(file="C:\\store\\billbtn.png")
+        self.bill = Button(self.wn, image=self.billbutton, bd=0, bg='pink', fg="white",
+                           activebackground="#73C2FB", activeforeground="indigo",
+                           font=("Comic Sans MS", 14, "bold"), height=50, cursor="hand2",
+                           command=self.bill, width=230, relief=RIDGE,
+                           overrelief=RAISED)
+        self.bill.image = self.billbutton
+        self.bill.place(x=70, y=350)
 
         self.show_menu()
         self.wn.mainloop()
@@ -83,7 +88,7 @@ class Staff_interface:
     def change_staff_credentials(self):
 
         # Chnange Credential Logo
-        self.change_credential_pic = PhotoImage(file="C:\\store\\change_credentials.png")
+        self.change_credential_pic = PhotoImage()
         self.change_credential_pic_lable = Label(self.tree_frame, image=self.change_credential_pic, bg="white")
         self.change_credential_pic_lable.image = self.change_credential_pic
 
