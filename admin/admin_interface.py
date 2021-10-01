@@ -30,7 +30,7 @@ class Addservice:
         self.title_photo = PhotoImage(file="C:\\store\\admin_top.png")
         self.title_photo_lable = Label(self.wn, image=self.title_photo, bg="white",bd=0)
         self.title_photo_lable.image = self.title_photo
-        self.title_photo_lable.place(x=0, y=0)
+        self.title_photo_lable.place(x=10, y=0)
 
         self.title_photo01 = PhotoImage(file="C:\\store\\one_admin_service.png")
         self.title_photo01_lable = Label(self.wn, image=self.title_photo01,bd=0)
@@ -52,7 +52,7 @@ class Addservice:
 
         #  Navigation Frame
         self.navigation_frame0 = LabelFrame(self.wn, bg="white", bd=2)
-        self.navigation_frame0.place(x=1123, y=0)
+        self.navigation_frame0.place(x=1118, y=0)
 
         # Major Heading
         self.lb_heading_inital = Label(self.frame1, text="Admin", bg="white", font=('Impact', 35, 'bold', 'underline'),fg='red')
@@ -62,7 +62,7 @@ class Addservice:
 
         # Creating Frame-2
         self.frame2 = Frame(self.wn, bg="white")
-        self.frame2.place(x=1, y=350)
+        self.frame2.place(x=0, y=350)
 
 
         #  Creating Seprator and Buttons

@@ -97,7 +97,7 @@ class Bill_App:
         self.admin_id = StringVar()
         self.admin_pass = StringVar()
 
-        # ------------>>> CUSTOMER DETAILS <<<<<-----------------
+        # CUSTOMER DETAILS
         F0 = LabelFrame(self.master, bd=10, relief=GROOVE, text="Customer Details",
                         font=("times new roman", 15, "bold"), fg="black", bg="dark orange")
         F0.place(x=0, y=70, width=870)
@@ -120,7 +120,7 @@ class Bill_App:
                                                                                                             pady=5,
                                                                                                             padx=10)
 
-        ################################ send email button
+        #send email button
         F1 = LabelFrame(self.master, bd=10, relief=GROOVE, text="send bill via Email ",
                         font=("times new roman", 15, "bold"), fg="black", bg="dark orange")
         F1.place(x=870, y=70, width=480)
@@ -134,12 +134,12 @@ class Bill_App:
 
 
         send_btn = Button(F1, text="Send", bg="dark orange", bd=5, fg="black", width=8, font="arial 12 bold").grid(row=0,
-                                                                                                            column=7)  # enter this line :- command=self.check_mail
+                                                                                                            column=8)  # enter this line :- command=self.check_mail
 
-        # ----------------->>>>> Snack & crackers frame <<<----------------
-        F2 = LabelFrame(self.master, bd=10, relief=GROOVE, text="Snacks & Crackers", font=("times new roman", 15, "bold"),
+        # Snack & crackers frame
+        F2 = LabelFrame(self.master, bd=5, relief=GROOVE, text="Snacks & Crackers", font=("times new roman", 15, "bold"),
                         fg="black", bg="dark orange")
-        F2.place(x=5, y=152, width=210, height=393)
+        F2.place(x=5, y=152, width=200, height=393)
 
         pringles_txt = Entry(F2, width=2, textvariable=self.pringles, font=("times new roman", 16, "bold"), bd=5,
                          relief=SUNKEN).grid(row=0, column=1, padx=10, pady=10, sticky=W)
@@ -176,10 +176,10 @@ class Bill_App:
                             relief=SUNKEN).grid(row=5, column=1, padx=10, pady=10, sticky=W)
 
 
-        # ----------------->>>>> riceandgrains frame <<<----------------
-        F3 = LabelFrame(self.master, bd=10, relief=GROOVE, text="Rice and Grains", font=("times new roman", 15, "bold"),
+        #  riceandgrains frame
+        F3 = LabelFrame(self.master, bd=5, relief=GROOVE, text="Rice & Grains", font=("times new roman", 15, "bold"),
                         fg="black", bg="dark orange")
-        F3.place(x=215, y=152, width=220, height=393)
+        F3.place(x=205, y=152, width=210, height=393)
 
         g1_label = Label(F3, text="Chickpeas", font=("times new roman", 16, "bold"), fg="black", bg="dark orange").grid(row=0,
                                                                                                                   column=0,
@@ -187,7 +187,7 @@ class Bill_App:
                                                                                                                   pady=10,
                                                                                                                   sticky="w")
         g1_txt = Entry(F3, width=4, textvariable=self.chickpeas, font=("times new roman", 16, "bold"), bd=5,
-                       relief=SUNKEN).grid(row=0, column=1, padx=10, pady=10, sticky=W)
+                       relief=SUNKEN).grid(row=0, column=1, padx=1, pady=10, sticky=W)
 
         g2_label = Label(F3, text="Rajma", font=("times new roman", 16, "bold"), fg="black", bg="dark orange").grid(row=1,
                                                                                                                 column=0,
@@ -195,7 +195,7 @@ class Bill_App:
                                                                                                                 pady=10,
                                                                                                                 sticky="w")
         g2_txt = Entry(F3, width=4, textvariable=self.rajma, font=("times new roman", 16, "bold"), bd=5,
-                       relief=SUNKEN).grid(row=1, column=1, padx=10, pady=10, sticky=W)
+                       relief=SUNKEN).grid(row=1, column=1, padx=1, pady=10, sticky=W)
 
         g3_label = Label(F3, text="Maize", font=("times new roman", 16, "bold"), fg="black", bg="dark orange").grid(row=2,
                                                                                                                  column=0,
@@ -203,12 +203,12 @@ class Bill_App:
                                                                                                                  pady=10,
                                                                                                                  sticky="w")
         g3_txt = Entry(F3, width=4, textvariable=self.maize, font=("times new roman", 16, "bold"), bd=5,
-                       relief=SUNKEN).grid(row=2, column=1, padx=10, pady=10, sticky=W)
+                       relief=SUNKEN).grid(row=2, column=1, padx=1, pady=10, sticky=W)
 
         g4_label = Label(F3, text="Peas", font=("times new roman", 16, "bold"), fg="black", bg="dark orange").grid(
             row=3, column=0, padx=10, pady=10, sticky="w")
         g4_txt = Entry(F3, width=4, textvariable=self.peas, font=("times new roman", 16, "bold"), bd=5,
-                       relief=SUNKEN).grid(row=3, column=1, padx=10, pady=10, sticky=W)
+                       relief=SUNKEN).grid(row=3, column=1, padx=1, pady=10, sticky=W)
 
         g5_label = Label(F3, text="Daal", font=("times new roman", 16, "bold"), fg="black", bg="dark orange").grid(row=4,
                                                                                                                 column=0,
@@ -216,7 +216,7 @@ class Bill_App:
                                                                                                                 pady=10,
                                                                                                                 sticky="w")
         g5_txt = Entry(F3, width=4, textvariable=self.daal, font=("times new roman", 16, "bold"), bd=5,
-                       relief=SUNKEN).grid(row=4, column=1, padx=10, pady=10, sticky=W)
+                       relief=SUNKEN).grid(row=4, column=1, padx=1, pady=10, sticky=W)
 
         g6_label = Label(F3, text="Rice", font=("times new roman", 16, "bold"), fg="black", bg="dark orange").grid(row=5,
                                                                                                                  column=0,
@@ -224,12 +224,12 @@ class Bill_App:
                                                                                                                  pady=10,
                                                                                                                  sticky="w")
         g6_txt = Entry(F3, width=4, textvariable=self.rice, font=("times new roman", 16, "bold"), bd=5,
-                       relief=SUNKEN).grid(row=5, column=1, padx=10, pady=10, sticky=W)
+                       relief=SUNKEN).grid(row=5, column=1, padx=1, pady=10, sticky=W)
 
-        # ----------------->>>>> beverages frame <<<----------------
-        F4 = LabelFrame(self.master, bd=10, relief=GROOVE, text="Beverages", font=("times new roman", 15, "bold"),
+        #  beverages frame
+        F4 = LabelFrame(self.master, bd=5, relief=GROOVE, text="Beverages", font=("times new roman", 15, "bold"),
                         fg="black", bg="dark orange")
-        F4.place(x=430, y=152, width=220, height=393)
+        F4.place(x=410, y=152, width=210, height=393)
 
         c1_label = Label(F4, text="Fanta", font=("times new roman", 16, "bold"), fg="black", bg="dark orange").grid(row=0,
                                                                                                                 column=0,
@@ -237,17 +237,17 @@ class Bill_App:
                                                                                                                 pady=10,
                                                                                                                 sticky="w")
         c1_txt = Entry(F4, width=4, textvariable=self.fanta, font=("times new roman", 16, "bold"), bd=5,
-                       relief=SUNKEN).grid(row=0, column=1, padx=10, pady=10, sticky=W)
+                       relief=SUNKEN).grid(row=0, column=1, padx=1, pady=10, sticky=W)
 
         c2_label = Label(F4, text="Coca cola", font=("times new roman", 16, "bold"), fg="black", bg="dark orange").grid(
             row=1, column=0, padx=10, pady=10, sticky="w")
         c2_txt = Entry(F4, width=4, textvariable=self.coca_cola, font=("times new roman", 16, "bold"), bd=5,
-                       relief=SUNKEN).grid(row=1, column=1, padx=10, pady=10, sticky=W)
+                       relief=SUNKEN).grid(row=1, column=1, padx=1, pady=10, sticky=W)
 
         c3_label = Label(F4, text="Soda", font=("times new roman", 16, "bold"), fg="black", bg="dark orange").grid(
             row=2, column=0, padx=10, pady=10, sticky="w")
         c3_txt = Entry(F4, width=4, textvariable=self.soda, font=("times new roman", 16, "bold"), bd=5,
-                       relief=SUNKEN).grid(row=2, column=1, padx=10, pady=10, sticky=W)
+                       relief=SUNKEN).grid(row=2, column=1, padx=1, pady=10, sticky=W)
 
         c4_label = Label(F4, text="Old Darbar", font=("times new roman", 16, "bold"), fg="black", bg="dark orange").grid(row=3,
                                                                                                                  column=0,
@@ -255,7 +255,7 @@ class Bill_App:
                                                                                                                  pady=10,
                                                                                                                  sticky="w")
         c4_txt = Entry(F4, width=4, textvariable=self.old_darbar, font=("times new roman", 16, "bold"), bd=5,
-                       relief=SUNKEN).grid(row=3, column=1, padx=10, pady=10, sticky=W)
+                       relief=SUNKEN).grid(row=3, column=1, padx=1, pady=10, sticky=W)
 
         c5_label = Label(F4, text="Vodka", font=("times new roman", 16, "bold"), fg="black", bg="dark orange").grid(row=4,
                                                                                                                   column=0,
@@ -263,7 +263,7 @@ class Bill_App:
                                                                                                                   pady=10,
                                                                                                                   sticky="w")
         c5_txt = Entry(F4, width=4, textvariable=self.vodka, font=("times new roman", 16, "bold"), bd=5,
-                       relief=SUNKEN).grid(row=4, column=1, padx=10, pady=10, sticky=W)
+                       relief=SUNKEN).grid(row=4, column=1, padx=1, pady=10, sticky=W)
 
         c6_label = Label(F4, text="Big Master", font=("times new roman", 16, "bold"), fg="black", bg="dark orange").grid(row=5,
                                                                                                                  column=0,
@@ -271,12 +271,12 @@ class Bill_App:
                                                                                                                  pady=10,
                                                                                                                  sticky="w")
         c6_txt = Entry(F4, width=4, textvariable=self.big_master, font=("times new roman", 16, "bold"), bd=5,
-                       relief=SUNKEN).grid(row=5, column=1, padx=10, pady=10, sticky=W)
+                       relief=SUNKEN).grid(row=5, column=1, padx=1, pady=10, sticky=W)
 
-        # ----------------->>>>> fruitsandvegetables frame <<<----------------
-        F4 = LabelFrame(self.master, bd=10, relief=GROOVE, text="Fruits and Vegetables", font=("times new roman", 15, "bold"),
+        #  fruitsandvegetables frame
+        F4 = LabelFrame(self.master, bd=5, relief=GROOVE, text="Fruits & Vegetables", font=("times new roman", 15, "bold"),
                         fg="black", bg="dark orange")
-        F4.place(x=640, y=152, width=230, height=393)
+        F4.place(x=620, y=152, width=200, height=393)
 
         c1_label = Label(F4, text="Apple", font=("times new roman", 16, "bold"), fg="black", bg="dark orange").grid(
             row=0, column=0, padx=10, pady=10, sticky="w")
@@ -314,53 +314,53 @@ class Bill_App:
         c6_txt = Entry(F4, width=4, textvariable=self.spanich, font=("times new roman", 16, "bold"), bd=5,
                        relief=SUNKEN).grid(row=5, column=1, padx=10, pady=10, sticky=W)
 
-        # ----------------->>>>> Bakery and Dairy frame <<<----------------
+        # Bakery and Dairy frame
 
-        F5 = LabelFrame(self.master, bd=10, relief=GROOVE, text="Bakery and Dairy",
+        F5 = LabelFrame(self.master, bd=5, relief=GROOVE, text="Bakery & Dairy",
                         font=("times new roman", 15, "bold"),
                         fg="black", bg="dark orange")
-        F5.place(x=840, y=152, width=230, height=393)
+        F5.place(x=810, y=152, width=210, height=393)
 
 
         b1_label = Label(F5, text="Bread", font=("times new roman", 16, "bold"), fg="black",
                                bg="dark orange").grid(row=0, column=0, padx=10, pady=10, sticky="w")
         b1_txt = Entry(F5, width=4, textvariable=self.bread, font=("times new roman", 16, "bold"), bd=5,
-                       relief=SUNKEN).grid(row=0, column=1, padx=10, pady=10, sticky=W)
+                       relief=SUNKEN).grid(row=0, column=1, padx=1, pady=10, sticky=W)
         # crossiant
         b2_label = Label(F5, text="Crossiant", font=("times new roman", 16, "bold"), fg="black",
                            bg="dark orange").grid(row=1, column=0, padx=10, pady=10, sticky="w")
         b2_txt = Entry(F5, width=4, textvariable=self.crossiant, font=("times new roman", 16, "bold"), bd=5,
-                         relief=SUNKEN).grid(row=1, column=1, padx=10, pady=10, sticky=W)
+                         relief=SUNKEN).grid(row=1, column=1, padx=1, pady=10, sticky=W)
 
         # doughnut
         b3_label = Label(F5, text="Doughnut", font=("times new roman", 16, "bold"), fg="black",
                               bg="dark orange").grid(row=2, column=0, padx=10, pady=10, sticky="w")
         b3_txt = Entry(F5, width=4, textvariable=self.doughnut, font=("times new roman", 16, "bold"), bd=5,
-                            relief=SUNKEN).grid(row=2, column=1, padx=10, pady=10, sticky=W)
+                            relief=SUNKEN).grid(row=2, column=1, padx=1, pady=10, sticky=W)
 
         # butter
         b4_label = Label(F5, text="Butter", font=("times new roman", 16, "bold"), fg="black",
                                      bg="dark orange").grid(row=3, column=0, padx=10, pady=10, sticky="w")
         b4_txt = Entry(F5, width=4, textvariable=self.butter, font=("times new roman", 16, "bold"),
                                    bd=5,
-                                   relief=SUNKEN).grid(row=3, column=1, padx=10, pady=10, sticky=W)
+                                   relief=SUNKEN).grid(row=3, column=1, padx=1, pady=10, sticky=W)
 
         # paneer
         b5_label = Label(F5, text="Paneer", font=("times new roman", 16, "bold"), fg="black",
                              bg="dark orange").grid(row=4, column=0, padx=10, pady=10, sticky="w")
         b5_txt = Entry(F5, width=4, textvariable=self.paneer, font=("times new roman", 16, "bold"), bd=5,
-                           relief=SUNKEN).grid(row=4, column=1, padx=10, pady=10, sticky=W)
+                           relief=SUNKEN).grid(row=4, column=1, padx=1, pady=10, sticky=W)
 
         # ddc_milk
         b6_label = Label(F5, text="DDC_Milk", font=("times new roman", 16, "bold"), fg="black",
                            bg="dark orange").grid(row=5, column=0, padx=10, pady=10, sticky="w")
-        b6 = Entry(F5, width=4, textvariable=self.ddc_milk, font=("times new roman", 16, "bold"), bd=5,
-                         relief=SUNKEN).grid(row=5, column=1, padx=10, pady=10, sticky=W)
+        b6_txt = Entry(F5, width=4, textvariable=self.ddc_milk, font=("times new roman", 16, "bold"), bd=5,
+                         relief=SUNKEN).grid(row=5, column=1, padx=1, pady=10, sticky=W)
 
         # bill Area ....................................
 
-        F6 = LabelFrame(self.master, bd=10, relief=GROOVE)
-        F6.place(x=1070, y=152, width=350, height=393)
+        F6 = LabelFrame(self.master, bd=5, relief=GROOVE)
+        F6.place(x=1005, y=152, width=350, height=393)
         bill_title = Label(F6, text="Bill Area", font="arial 15 bold", bd=7, relief=GROOVE).pack(fill=X)
 
         scrol_y = Scrollbar(F6, orient=VERTICAL)
@@ -373,7 +373,7 @@ class Bill_App:
 
         F7 = LabelFrame(self.master, bd=10, relief=GROOVE, text="Bill Menu", font=("times new roman", 15, "bold"),
                         fg="black", bg="dark orange")
-        F7.place(x=0, y=540, relwidth=1, height=180)
+        F7.place(x=0, y=510, relwidth=1, height=180)
 
         m1 = Label(F7, text="Total Snacks Price", bg="dark orange", fg="black",
                    font=("times new roman", 14, "bold")).grid(row=0, column=0, padx=20, pady=1, sticky=W)
@@ -450,41 +450,6 @@ class Bill_App:
 
 
         self.welcome_bill()
-        # ----------------->>>>> bill search frame <<<----------------
-        F8 = LabelFrame(self.master, bd=10, relief=GROOVE, text="Bill Search ", font=("times new roman", 15, "bold"),
-                        fg="gold", bg="tomato")
-        F8.place(x=0, y=712, width=350, height=80)
-
-        bn_txt = Entry(F8, width=18, textvariable=self.search_bill, font="arial 10 bold", bd=7, relief=SUNKEN).grid(
-            row=0, column=1, padx=30, pady=1)
-        search_btn = Button(F8, text="Search", command=self.find_bill, bg="cyan", bd=5, fg="black", width=8,
-                            font="arial 12 bold").grid(row=0, column=2)
-
-        # ---------------Admin area-----------------------
-        F9 = LabelFrame(self.master, bd=10, relief=GROOVE, text="Admin area ", font=("times new roman", 15, "bold"),
-                        fg="gold", bg="tomato")
-        F9.place(x=351, y=712, width=1186, height=80)
-
-        Label(F9, text="Login :  | ", font=("times new roman", 15, "bold"), fg="black", bg="sky blue").grid(row=0,
-                                                                                                            column=0)
-        Label(F9, text="ID ", font=("times new roman", 15, "bold"), fg="black", bg="tomato").grid(row=0, column=1)
-
-        admin_id1 = Entry(F9, width=25, textvariable=self.admin_id, font="arial 10 bold", bd=7, relief=SUNKEN).grid(
-            row=0, column=2, sticky=E)
-
-        Label(F9, text="  Password", font=("times new roman", 15, "bold"), fg="black", bg="dark orange").grid(row=0,
-                                                                                                           column=3)
-
-        admin_pass1 = Entry(F9, width=18, textvariable=self.admin_pass, font="arial 10 bold", bd=7, relief=SUNKEN,
-                            show='X').grid(row=0, column=4, sticky=E)
-
-
-        # -------sign up----------------
-        Label(F9, text="  Create New Account", font=("times new roman", 15, "bold"), fg="black", bg="dark orange").grid(
-            row=0, column=6)
-        a_sign_up = Button(F9, text="Sign Up", bg="dark orange", bd=5, fg="black", width=12, font="arial 12 bold").grid(row=0,
-                                                                                                                 column=7,
-                                                                                                                 padx=35)
 
 
     def total(self):

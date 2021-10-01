@@ -177,7 +177,7 @@ class Firstwindow:
                                        font=("Comic Sans MS", 14, "bold"), height=50, width=225,
                                        command=self.open_staff_loginpage, relief=RIDGE, overrelief=RAISED)
         self.butn_login_staff.image = self.butn_login_staffbtn
-        self.butn_login_staff.place(x=1110, y=480)
+        self.butn_login_staff.place(x=1090, y=480)
     #  COMMAND TO OPEN ADMIN LOGIN PAGE
     def open_admin_loginpage(self):
         self.wn.destroy()

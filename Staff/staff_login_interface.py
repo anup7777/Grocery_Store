@@ -59,11 +59,11 @@ class Staffwindow:
         self.staff_frame2.place(x=1058, y=168)
 
         # All Lables
-        self.lb_heading = Label(self.staff_frame1, text="Staff",font=('Impact',36,'bold','underline'),justify="center", fg='red',bg="white")
-        self.lb_heading.grid(row=0, column=0,columnspan=1,padx=40,pady=10)
+        self.lb_heading = Label(self.staff_frame1, text="Staff",font=('Impact',32,'bold','underline'),justify="center", fg='red',bg="white")
+        self.lb_heading.grid(row=0, column=0,padx=40,pady=10)
 
-        self.lb_heading2 = Label(self.staff_frame2, text="Login",font=('Impact',36,'bold','underline'),justify="center", fg='blue',bg="white")
-        self.lb_heading2.grid(row=0, column=1,columnspan=1,padx=22,pady=10)
+        self.lb_heading2 = Label(self.staff_frame2, text="Login",font=('Impact',32,'bold','underline'),justify="center", fg='blue',bg="white")
+        self.lb_heading2.grid(row=0, column=1,padx=28,pady=10)
 
         self.lb_username = Label(self.staff_frame, text="Username:", bg="white",fg="Blue", font=("cambria", 15, 'bold','underline'),image=self.title02_photo,compound=LEFT)
         self.lb_username.grid(row=5, column=0, padx=10, pady=7)
