@@ -3,31 +3,29 @@ import math,random
 from tkinter import messagebox
 from PIL import Image, ImageTk
 import os
-import smtplib
 from tkinter import Tk, Label, Frame, Entry, Button
 from subprocess import Popen
-
-
 
 class Bill_App:
     def __init__(self, master):
         self.master = master
         self.master.geometry("1350x700")
         self.master.title("Bill")
+
         # adding icon image
         self.img = (Image.open("C:\\store\\staff_icon.jpg"))
         self.icoimg = ImageTk.PhotoImage(self.img)
         self.master.iconphoto(False, self.icoimg)
         self.master.resizable(False, False)
 
-        title = Label(self.master, text="BILL", bd=8, relief=GROOVE, bg="dark orange",
+        self.title = Label(self.master, text="BILL", bd=8, relief=GROOVE, bg="dark orange",
                       font=("times new roman", 27, "bold"), pady=2).pack(fill=X)
 
 
 
-        #    variable
+        # Variable
 
-        #   snack & crackers
+        # snack & crackers
         self.pringles = IntVar()
         self.lays = IntVar()
         self.kurkure = IntVar()
@@ -52,7 +50,6 @@ class Bill_App:
         self.big_master = IntVar()
 
         # fruit & vegetable
-
         self.apple = IntVar()
         self.banana = IntVar()
         self.oranges = IntVar()
@@ -60,7 +57,7 @@ class Bill_App:
         self.tomato = IntVar()
         self.spanich = IntVar()
 
-        #   bakery & dairy
+        # bakery & dairy
         self.bread = IntVar()
         self.crossiant = IntVar()
         self.doughnut = IntVar()
@@ -69,7 +66,6 @@ class Bill_App:
         self.ddc_milk = IntVar()
 
         # product price varible
-
         self.snacks_price = StringVar()
         self.riceandgrains_price = StringVar()
         self.cold_drink_price = StringVar()
@@ -77,7 +73,6 @@ class Bill_App:
         self.backeryanddairy_price = StringVar()
 
         # tax varible
-
         self.snacks_tax = StringVar()
         self.riceandgrains_tax = StringVar()
         self.beverages_tax = StringVar()
@@ -85,7 +80,6 @@ class Bill_App:
         self.backeryanddairy_tax = StringVar()
 
         # customer details
-
         self.c_name = StringVar()
         self.c_phon = StringVar()
         self.c_mail = StringVar()
@@ -106,8 +100,7 @@ class Bill_App:
         cname_label = Label(F0, text="Customer Name", bg="dark orange", font=("times new romen", 18, "bold")).place(x=150, y=3)
         cname_txt = Entry(F0, width=18, textvariable=self.c_name, font="arial 15", bd=7, relief=SUNKEN).grid(row=0, column=2, padx=350, pady=3)
 
-        cphn_label = Label(F0, text="Phone No.", bg="dark orange", font=("times new romen", 18, "bold")).place(x=700, y=3)
-        cphn_txt = Entry(F0, width=18, textvariable=self.c_phon, font="arial 15", bd=7, relief=SUNKEN).place(x=850, y=3)
+
         # Snack & crackers frame
         F2 = LabelFrame(self.master, bd=5, relief=GROOVE, text="Snacks & Crackers", font=("times new roman", 15, "bold"),
                         fg="black", bg="dark orange")
@@ -117,6 +110,7 @@ class Bill_App:
                          relief=SUNKEN).grid(row=0, column=1, padx=10, pady=10, sticky=W)
         pringles_label = Label(F2, text="Pringles", font=("times new roman", 16, "bold"), fg="black", bg="dark orange").grid(
             row=0, column=0, padx=10, pady=10, sticky="w")
+
         # lays
         lays_label = Label(F2, text="Lays", font=("times new roman", 16, "bold"), fg="black",
                                 bg="dark orange").grid(row=1, column=0, padx=10, pady=10, sticky="w")
@@ -329,7 +323,7 @@ class Bill_App:
         b6_txt = Entry(F5, width=4, textvariable=self.ddc_milk, font=("times new roman", 16, "bold"), bd=5,
                          relief=SUNKEN).grid(row=5, column=1, padx=1, pady=10, sticky=W)
 
-        # bill Area ....................................
+        # Bill Area
 
         F6 = LabelFrame(self.master, bd=5, relief=GROOVE)
         F6.place(x=1005, y=140, width=350, height=393)
@@ -341,7 +335,7 @@ class Bill_App:
         scrol_y.config(command=self.txtarea.yview)
         self.txtarea.pack(fill=BOTH, expand=1)
 
-        #  bottom button frame----------------------------------
+        #  Bottom button frame
 
         F7 = LabelFrame(self.master, bd=8, relief=GROOVE, text="Bill Menu", font=("times new roman", 15, "bold"),
                         fg="black", bg="dark orange")
@@ -373,7 +367,7 @@ class Bill_App:
                        relief=SUNKEN).grid(
             row=4, column=1, padx=1, pady=1)
 
-        # for tax
+        # For tax
 
         tax1 = Label(F7, text="Snacks Tax (28%)", bg="dark orange", fg="black",
                      font=("times new roman", 14, "bold")).grid(row=0, column=2, padx=20, pady=1, sticky=W)
@@ -443,7 +437,7 @@ class Bill_App:
     def total(self):
         self.s_pr = self.pringles.get() * 268
         self.s_la = self.lays.get() * 45  # *self.find_price("pringles",self.pringles_clicked.get())
-        self.s_ku = self.kurkure.get() * 150  # *self.find_price("lays",self.laus_clicked.get())
+        self.s_ku = self.kurkure.get() * 150  # *self.find_price("lays",self.lays_clicked.get())
         self.s_pob = self.potato_biscuit.get() * 150  # *self.find_price("potato",self.potatobiscuit_clicked.get())
         self.s_mob = self.monaco.get() * 80  # *self.find_price("monaco",self.monacobiscuit_clicked.get())
         self.s_or = self.oreo.get() * 25  # *self.find_price("oreo",self.oreo_clicked.get())
@@ -669,7 +663,7 @@ class Bill_App:
             self.save_bill()
 
     def save_bill(self):
-        op = messagebox.askyesno("save bill", "Do you want to save the bill ?")
+        op = messagebox.askyesno("Save bill", "Do you want to save the bill ?")
         if op > 0:
             self.bill_data = self.txtarea.get('1.0', END)
             fp1 = open("bills/" + str(self.bill_no.get()) + ".txt", "w")
@@ -773,6 +767,7 @@ class Bill_App:
         op1 = messagebox.askyesno("Exit", "Do you want to Exit")
         if op1 > 0:
             self.master.destroy()
+
         else:
             return
 
@@ -783,7 +778,7 @@ class Bill_App:
 
 
 
-        # Notepad Area ....................................
+        # Notepad Area
 
         F4 = LabelFrame(self.bill_app, bd=10, relief=GROOVE)
         F4.place(x=780, y=133, width=757, height=600)
@@ -840,5 +835,3 @@ class Bill_App:
     def Update_stock(self):
         # os.startfile('stock.csv','r')
         p = Popen('stock.csv', shell=True)
-
-

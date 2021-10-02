@@ -12,6 +12,7 @@ class Addservice:
         self.wn = Tk()
         self.wn.title("Admin Panel")
         self.wn.geometry("1350x700+0+0")
+
         # adding icon image
         self.img = (Image.open("C:\\store\\admin_icon.png"))
         self.icoimg = ImageTk.PhotoImage(self.img)
@@ -116,7 +117,7 @@ class Addservice:
         self.show_menu()
         self.wn.mainloop()
 
-        # Menu Button
+    # Menu Button
     def show_menu(self):
         my_menu = Menu(self.wn)
         self.wn.config(menu=my_menu)
@@ -124,7 +125,7 @@ class Addservice:
         my_menu.add_cascade(label="Log Out", menu=log_out)
         log_out.add_cascade(label="Log Out", command=self.logout)
 
-        # Window for PRODUCT Button
+    # Window for PRODUCT Button
 
     def product(self):
         self.deleteframe()
@@ -290,7 +291,7 @@ class Addservice:
             self.seperator.place(x=self.data1, y=412)
             self.data1 += 10
 
-        #  ADDING PRODUCTS
+    #  ADDING PRODUCTS
 
     def addproduct(self):
         pro_name = self.product_entbx1.get()
@@ -312,7 +313,7 @@ class Addservice:
         else:
             messagebox.showerror("Error", "Can't leave any blank spaces.")
 
-        # = SHOWING DATA IN PRODUCT_TREE
+    #  SHOWING DATA IN PRODUCT_TREE
 
     def showitemintree_productdata(self):
         self.product_tree.delete(*self.product_tree.get_children())
@@ -321,7 +322,7 @@ class Addservice:
             self.product_tree.insert("", "end", text=i[0], value=(i[1], i[2], i[3], i[4], i[5]))
         self.product_tree.bind("<Double-1>", self.product_onitemselect)
 
-        # SELECTING DATA FROM PRODUCT TREE
+    # SELECTING DATA FROM PRODUCT TREE
 
     def product_onitemselect(self, event):
         selected_row00 = self.product_tree.selection()[0]
@@ -365,7 +366,7 @@ class Addservice:
             else:
                 messagebox.showerror("Error", "Can't leave any blank spaces.")
 
-        #  SEARCHING PRODUCT DATA
+    #  SEARCHING PRODUCT DATA
 
     def productsearch(self):
         if len(self.product_search_value.get()) != 0 and len(self.product_search_obj.get()) != 0:
@@ -382,7 +383,7 @@ class Addservice:
         else:
             messagebox.showerror("Empty Data to conduct search", "Search not accomplised with empty data.")
 
-        #  Delete Product
+    #  Delete Product
 
     def deleteproduct(self):
         if self.update_index00 == "":
@@ -394,7 +395,7 @@ class Addservice:
             else:
                 messagebox.showerror("Can't delete", "Delete Failed")
 
-        #  Customer Board
+    #  Customer Board
 
     def customerboard(self):
         self.deleteframe()
@@ -566,7 +567,7 @@ class Addservice:
             self.seperator.place(x=self.data1, y=420)
             self.data1 += 10
 
-        # SHOWING CUSTOMER DATA IN TREE
+    # SHOWING CUSTOMER DATA IN TREE
 
     def showitemintree_customerdata(self):
         self.customerboard_tree.delete(*self.customerboard_tree.get_children())
@@ -576,7 +577,7 @@ class Addservice:
                                            value=(i[1], i[4], i[5], i[6], i[7], i[8]))
         self.customerboard_tree.bind("<Double-1>", self.customerdata_onitemselect)
 
-        # SELECTING VALUE IN CUSTOMER TREE
+    # SELECTING VALUE IN CUSTOMER TREE
 
     def customerdata_onitemselect(self, event):
         selected_row = self.customerboard_tree.selection()[0]
@@ -597,7 +598,7 @@ class Addservice:
         self.customerboard_entbx6.delete(0, END)
         self.customerboard_entbx6.insert(0, selected_item[5])
 
-        #  UPDATING CUSTOMER DATA
+    #  UPDATING CUSTOMER DATA
 
     def customer_status_updatefrntend(self):
         if self.update_index == "":
@@ -616,7 +617,7 @@ class Addservice:
                 if age.isdigit():
                     if self.admin_backend.customer_status_update(self.update_index, name, age, gender, address, email,
                                                                  admin_approval):
-                        messagebox.showinfo('Item', "Item Updated")
+                        messagebox.showinfo('Admin', "Approved by Admin")
                         self.showitemintree_customerdata()
                         self.update_index = ""
                     else:
@@ -626,7 +627,7 @@ class Addservice:
             else:
                 messagebox.showerror("Error", "You can't leave any blank spaces")
 
-        #  SEARCH DOCTOR DATA
+    #  SEARCH CUSTOMER DATA
 
     def customersearch(self):
         if len(self.customer_search_value.get()) != 0 and len(self.customer_search_obj.get()) != 0:
@@ -656,7 +657,7 @@ class Addservice:
             else:
                 messagebox.showerror("Can't delete", "Delete Failed")
 
-        #  STAFF BOARD
+    #  STAFF BOARD
 
     def staffboard(self):
         self.deleteframe()
@@ -823,7 +824,7 @@ class Addservice:
             self.staffboard_tree.insert("", "end", text=i[0], value=(i[1], i[4], i[5], i[6], i[7]))
         self.staffboard_tree.bind("<Double-1>", self.staffdata_onitemselect)
 
-        # SELECTING STAFF DATA IN TREE
+    # SELECTING STAFF DATA IN TREE
 
     def staffdata_onitemselect(self, event):
         selected_row1 = self.staffboard_tree.selection()[0]
@@ -841,7 +842,7 @@ class Addservice:
         self.staffboard_entbx5.delete(0, END)
         self.staffboard_entbx5.insert(0, selected_item1[4])
 
-        #  UPDATING STAFF DATA IN TREE
+    #  UPDATING STAFF DATA IN TREE
 
     def staff_status_updatefrntend(self):
         if self.update_index0 == "":
@@ -857,7 +858,7 @@ class Addservice:
                 if age.isdigit():
                     if self.admin_backend.staff_status_update(self.update_index0, name, age, gender, address
                             , admin_approval):
-                        messagebox.showinfo('Item', "Item Updated")
+                        messagebox.showinfo('Admin', "Approved by Admin")
                         self.showitemintree_staffdata()
                         self.update_index0 = ""
                     else:
@@ -867,7 +868,7 @@ class Addservice:
             else:
                 messagebox.showerror("Error", "Can't leave any blank spaces.")
 
-        #  SEARCHING STAFF DATA IN TREE
+    #  SEARCHING STAFF DATA IN TREE
 
     def staffsearch(self):
         if len(self.staff_search_value.get()) != 0 and len(self.staff_search_obj.get()) != 0:
@@ -885,7 +886,7 @@ class Addservice:
         else:
             messagebox.showerror("Empty Data to conduct search", "Search not accomplised with empty data.")
 
-        #  Delete Staffs
+    #  Delete Staffs
 
     def deletestaffs(self):
         if self.update_index0 == "":
@@ -897,7 +898,7 @@ class Addservice:
             else:
                 messagebox.showerror("Can't delete", "Delete Failed")
 
-        # DATE AND TIME SELECTED FRAME
+    # DATE AND TIME SELECTED FRAME
 
     def display_time(self):
         current_time = tm.strftime('%I:%M:%S %p ')
@@ -912,7 +913,7 @@ class Addservice:
         date_label = Label(self.navigation_frame0, text=current_date, font="Ariel 15", bg='white', fg='#2b2b2b')
         date_label.grid(row=1, column=0, pady=2)
 
-        # DELETE LAST SELECTED FRAME
+    # DELETE LAST SELECTED FRAME
 
     def deleteframe(self):
         for widget in self.navigation_frame.winfo_children():

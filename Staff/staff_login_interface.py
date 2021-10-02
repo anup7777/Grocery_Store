@@ -12,6 +12,7 @@ class Staffwindow:
         self.wn=Tk()
         self.wn.title("Staff Login")
         self.wn.geometry("1350x700+0+0")
+
         # adding icon image
         self.img = (Image.open("C:\\store\\staff_icon.jpg"))
         self.icoimg = ImageTk.PhotoImage(self.img)
@@ -71,7 +72,7 @@ class Staffwindow:
         self.lb_password = Label(self.staff_frame, text="Password:", bg="white", fg="Blue", font=("cambria", 15, 'bold','underline'),image=self.title03_photo,compound=LEFT)
         self.lb_password.grid(row=10, column=0, padx=10, pady=5)
 
-        # = All Entries
+        #  All Entries
         self.ent_username = Entry(self.staff_frame, bg="white", fg="black", font=("arial", 15, "bold"))
         self.ent_username.grid(row=6, column=0,padx=40, pady=5)
 
@@ -99,14 +100,14 @@ class Staffwindow:
         self.create_account_button_photo_button.grid(row=20, columnspan=3, pady=2)
 
 
-         #username
+        # Username
         self.ent_username.bind("<FocusIn>", self.on_enter)
         self.ent_username.bind("<FocusOut>", self.on_leave)
 
         self.ent_username.insert(0, "Username")
 
 
-        #password
+        # Password
         self.ent_pass.bind("<FocusIn>", self.on_enter1)
         self.ent_pass.bind("<FocusOut>", self.on_leave1)
 
@@ -115,7 +116,7 @@ class Staffwindow:
         self.show_menu()
         self.wn.mainloop()
 
-        # username
+    # username
 
     def on_enter(self, c):
         if self.ent_username.get() == "Username":
@@ -125,7 +126,7 @@ class Staffwindow:
         if self.ent_username.get() == "":
             self.ent_username.insert(0, "Username")
 
-        # password
+    # password
 
     def on_enter1(self, d):
         if self.ent_pass.get() == "Password":
@@ -164,7 +165,7 @@ class Staffwindow:
                 name_logged_in_user=values[required_index][0]
                 if (username == values[required_index][0].lower() and password == values[required_index][1].lower()):
                     if values[required_index][3] == "yes" or values[required_index][3] == "Yes":
-                        messagebox.showinfo("Login Successful",f"Welcome Mr {values[required_index][2]}")
+                        messagebox.showinfo("Login Successful",f"Welcome Mr. {values[required_index][2]}")
                         self.open_staff_dashboard(name_logged_in_user)
                     else:
                         messagebox.showerror("User not authenticated","Your registration hasn't been\n approved by the admin yet.")

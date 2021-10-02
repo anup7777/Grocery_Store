@@ -16,6 +16,7 @@ class Staff_interface:
         self.wn = Tk()
         self.wn.title("Staff Panel")
         self.wn.geometry("1350x735+0+0")
+
         # adding icon image
         self.img = (Image.open("C:\\store\\staff_icon.jpg"))
         self.icoimg = ImageTk.PhotoImage(self.img)
@@ -84,7 +85,7 @@ class Staff_interface:
         self.wn.mainloop()
 
 
-    #   Changing Credentials
+    #  Changing Credentials
     def change_staff_credentials(self):
 
         # Chnange Credential Logo
@@ -157,7 +158,7 @@ class Staff_interface:
         self.changeboard_lb4.grid(row=6, column=1, padx=10, pady=14)
 
         #  Required Buttons =
-        self.changeboard_btn1_img = PhotoImage(file="C:\\store\\updatebutton.png")
+        self.changeboard_btn1_img = PhotoImage(file="C:\\store\\updatebtn.png")
         self.changeboard_btn1 = Button(self.navigation_frame, image=self.changeboard_btn1_img,
                                            command=self.updating_credentials, bg="white", fg="black",
                                            font=("arial", 15), height=25, width=95)

@@ -11,6 +11,7 @@ class Userwindow:
     def __init__(self):
         self.wn=Tk()
         self.wn.title("Customer Login")
+
         # adding icon image
         self.img = (Image.open("C:\\store\\user_i.ico"))
         self.icoimg = ImageTk.PhotoImage(self.img)
@@ -76,6 +77,7 @@ class Userwindow:
                                  font=("cambria", 15, 'bold', 'underline'), image=self.title03_photo, compound=LEFT)
         self.lb_password.grid(row=10, column=0, padx=10, pady=3)
 
+
         #  All Entries
         self.ent_username = Entry(self.user_frame, bg="white", fg="black", font=("arial", 15, "bold"))
         self.ent_username.grid(row=6, column=0, padx=40, pady=3)
@@ -111,14 +113,14 @@ class Userwindow:
         self.create_account_button_photo_button.image = self.create_account_button_photo
         self.create_account_button_photo_button.grid(row=22, columnspan=3, pady=2)
 
-         #username
+        # Username
         self.ent_username.bind("<FocusIn>", self.on_enter)
         self.ent_username.bind("<FocusOut>", self.on_leave)
 
         self.ent_username.insert(0, "Username")
 
 
-        #password
+        # Password
         self.ent_pass.bind("<FocusIn>", self.on_enter1)
         self.ent_pass.bind("<FocusOut>", self.on_leave1)
 
@@ -128,7 +130,7 @@ class Userwindow:
         self.wn.mainloop()
 
 
-    #username
+    # Username
     def on_enter(self, c):
         if self.ent_username.get() == "Username":
             self.ent_username.delete(0, 'end')
@@ -137,7 +139,7 @@ class Userwindow:
         if self.ent_username.get() == "":
             self.ent_username.insert(0, "Username")
 
-    #password
+    # Password
     def on_enter1(self, d):
         if self.ent_pass.get() == "Password":
             self.ent_pass.delete(0, 'end')

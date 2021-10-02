@@ -9,17 +9,17 @@ from User.user_login_interface import Userwindow
 from Staff.staff_login_interface import Staffwindow
 
 class Firstwindow:
-    # creating Tkinter Window
 
+    # creating Tkinter Window
     def __init__(self):
         self.wn=Tk()
         self.wn.title("Grocery Store System")
         self.wn.geometry("1350x700")
+
         # adding icon image
         self.img = (Image.open("C:\\store\\f_icon.png"))
         self.icoimg = ImageTk.PhotoImage(self.img)
         self.wn.iconphoto(False, self.icoimg)
-        #self.wn.config(bg="Grey")
         self.wn.resizable(False,False)
 
        #  Importing all necessary photo
@@ -101,7 +101,6 @@ class Firstwindow:
             self.f_photo_lable.config(image=self.f_photo)
 
         # labling photo
-
         self.a_photo_lable.place(x=self.x, y=20)
         self.a_photo_lable.after(2,self.slider_func)
 
@@ -109,7 +108,6 @@ class Firstwindow:
     def second_window(self):
 
         # Creating Frames
-
         self.frame22 = Frame(self.wn, bg="white")
         self.frame22.place(x=485, y=150)
         self.frame3 = Frame(self.wn, bg="white")
@@ -178,6 +176,7 @@ class Firstwindow:
                                        command=self.open_staff_loginpage, relief=RIDGE, overrelief=RAISED)
         self.butn_login_staff.image = self.butn_login_staffbtn
         self.butn_login_staff.place(x=1090, y=480)
+
     #  COMMAND TO OPEN ADMIN LOGIN PAGE
     def open_admin_loginpage(self):
         self.wn.destroy()

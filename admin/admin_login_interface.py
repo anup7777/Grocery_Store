@@ -10,6 +10,7 @@ class Adminwindow:
         self.wn=Tk()
         self.wn.title("Admin Login")
         self.wn.geometry("1370x735+0+0")
+
         # adding icon image
         self.img = (Image.open("C:\\store\\admin_icon.png"))
         self.icoimg = ImageTk.PhotoImage(self.img)
@@ -65,6 +66,7 @@ class Adminwindow:
         #  LABEL - USERNAME
         self.lb_username = Label(self.admin_frame, text="Username:", bg="white",fg="Blue", font=("cambria", 15, 'bold','underline'),image=self.title02_photo,compound=LEFT)
         self.lb_username.grid(row=5, column=0, padx=10, pady=5)
+
         #  LABEL - PASSWORD
         self.lb_password = Label(self.admin_frame, text="Password:", bg="white", fg="Blue", font=("cambria", 15, 'bold','underline'),image=self.title03_photo,compound=LEFT)
         self.lb_password.grid(row=10, column=0, padx=10, pady=5)
@@ -73,7 +75,7 @@ class Adminwindow:
         self.ent_username = Entry(self.admin_frame, bg="white", fg="black", font=("arial", 15, "bold"))
         self.ent_username.grid(row=6, column=0,padx=35, pady=5)
 
-        #  SCEOND Entry - PASSWORD
+        #  SECOND Entry - PASSWORD
         self.ent_pass = Entry(self.admin_frame, bg="white", fg="black", font=("arial", 15, "bold"), show="")
         self.ent_pass.grid(row=11, column=0, padx=35, pady=5)
 
@@ -108,7 +110,7 @@ class Adminwindow:
         self.show_menu()
         self.wn.mainloop()
 
-        # username
+    # username
     def on_enter(self, c):
            if self.ent_username.get() == "Username":
              self.ent_username.delete(0, 'end')
@@ -117,7 +119,7 @@ class Adminwindow:
         if self.ent_username.get() == "":
                 self.ent_username.insert(0, "Username")
 
-        # password
+    # password
     def on_enter1(self, d):
         if self.ent_pass.get() == "Password":
             self.ent_pass.delete(0, 'end')
@@ -128,7 +130,7 @@ class Adminwindow:
             self.ent_pass.config(show="")
             self.ent_pass.insert(0, "Password")
 
-        #  CHECK CREDENTIALS
+    #  CHECK CREDENTIALS
     def checking_credentials(self):
         username = self.ent_username.get()
         password = self.ent_pass.get()

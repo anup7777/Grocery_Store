@@ -6,7 +6,8 @@ from admin.connection import MyDatabase
 class cart():
     def __init__(self):
         self.wn = Tk()
-        self.wn.title("Customer_Cart")
+        self.wn.title("Customer Cart")
+
         # adding icon image
         self.img = (Image.open("C:\\store\\user_i.ico"))
         self.icoimg = ImageTk.PhotoImage(self.img)
@@ -278,6 +279,7 @@ class cart():
         self.lbl30= Label (self.wn, text="    BIG    MASTER   \nRs.750for750ml",font=("Arial",12),bg="#FDFC96")
         self.lbl30.place(x=1136,y=630)
 
+
         #adding checkboxes
         self.var1 = IntVar()
         self.checkButton1 = Checkbutton(self.wn, text="", variable = self.var1, onvalue= 1, offvalue=0, bg="#FDFC96")
@@ -371,6 +373,7 @@ class cart():
         self.checkButton30.place(x=1125,y=545)
 
 
+        # Adding data to the database
         def popup():
             sql = "INSERT INTO fruit(apple,banana,orange,tomato,spinach,onion,lays,kurkure,pringles,monaco,biscuit,oreo,rice,maize,peas,letensil,rajma,chickpeas,bread,toast,doughnut,milk,paneer,butter,cocacola,fanta,soda,vodka,olddurbar,bigmaster)VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)"
             values=(self.var1.get(),self.var2.get(),self.var3.get(),self.var4.get(),self.var5.get(),self.var6.get(),self.var7.get(),self.var8.get(),self.var9.get(),self.var10.get(),self.var11.get(),self.var12.get(),self.var13.get(),self.var14.get(),self.var15.get(),self.var16.get(),self.var17.get(),self.var18.get(),self.var19.get(),self.var20.get(),self.var21.get(),self.var22.get(),self.var23.get(),self.var24.get(),self.var25.get(),self.var26.get(),self.var27.get(),self.var28.get(),self.var29.get(),self.var30.get())
@@ -378,7 +381,7 @@ class cart():
             print(values)
             messagebox.showinfo("Added","Items added to your cart sucessfully!!")
 
-            # Button
+        # Button
         addbutton = PhotoImage(file="C:\\store\\addcart.png")
         add = Button(self.wn, image=addbutton, bd=0, bg='darkblue', fg="white",
                               activebackground="#73C2FB", activeforeground="indigo",
@@ -388,12 +391,11 @@ class cart():
         add.image = addbutton
         add.place(x=10, y=620)
 
-
-
         self.my_database = MyDatabase()
         self.show_menu()
         self.wn.mainloop()
 
+    # Logout
     def logout(self):
             self.wn.destroy()
             from interface.first_window import Firstwindow

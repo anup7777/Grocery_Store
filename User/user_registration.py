@@ -1,6 +1,7 @@
 from tkinter import *
 from tkinter import messagebox
 from PIL import Image, ImageTk
+import tkinter.ttk as ttk
 from admin.connection import MyDatabase
 
 class Userregistrationwindow:
@@ -8,7 +9,8 @@ class Userregistrationwindow:
 
     def __init__(self):
         self.wn=Tk()
-        self.wn.title("User Registration")
+        self.wn.title("Customer Registration")
+
         # adding icon image
         self.img = (Image.open("C:\\store\\user_i.ico"))
         self.icoimg = ImageTk.PhotoImage(self.img)
@@ -98,7 +100,9 @@ class Userregistrationwindow:
         self.ent_customerage=Entry(self.user_frame, bg="white", fg="black", font=("arial", 15, "bold"),justify="center")
         self.ent_customerage.grid(row=15, column=1, padx=10, pady=3)
 
-        self.ent_customergender=Entry(self.user_frame, bg="white", fg="black", font=("arial", 15, "bold"),justify="center")
+        self.ent_customergender = ttk.Combobox(self.user_frame, values=(' ', 'Male', 'Female', 'Others'),
+                                            font=('arial', 13, 'bold'),
+                                            textvariable=self.lb_customergender, width=23)
         self.ent_customergender.grid(row=20, column=1, padx=10, pady=3)
 
         self.ent_customeraddress=Entry(self.user_frame, bg="white", fg="black", font=("arial", 15, "bold"),justify="center")

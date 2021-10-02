@@ -1,6 +1,7 @@
 from tkinter import *
 from tkinter import messagebox
 from PIL import Image, ImageTk
+import tkinter.ttk as ttk
 from admin.connection import MyDatabase
 
 class Staffregistrationwindow:
@@ -8,6 +9,7 @@ class Staffregistrationwindow:
         self.wn=Tk()
         self.wn.title("Staff Registration")
         self.wn.geometry("1350x735+0+0")
+
         # adding icon image
         self.img = (Image.open("C:\\store\\staff_icon.jpg"))
         self.icoimg = ImageTk.PhotoImage(self.img)
@@ -102,8 +104,9 @@ class Staffregistrationwindow:
                                   justify="center")
         self.ent_staffage.grid(row=15, column=1, padx=10, pady=3)
 
-        self.ent_staffgender = Entry(self.staff_frame, bg="white", fg="black", font=("arial", 15, "bold"),
-                                     justify="center")
+        self.ent_staffgender = ttk.Combobox(self.staff_frame, values=(' ', 'Male', 'Female', 'Others'),
+                                            font=('arial', 13, 'bold'),
+                                            textvariable=self.lb_staffgender, width=23)
         self.ent_staffgender.grid(row=20, column=1, padx=10, pady=3)
 
         self.ent_staffaddress = Entry(self.staff_frame, bg="white", fg="black", font=("arial", 15, "bold"),
@@ -153,7 +156,7 @@ class Staffregistrationwindow:
         my_menu.add_cascade(label="<-- Back", menu=log_out)
         log_out.add_cascade(label="<-- Back", command=self.logout)
 
-    # =================================== Logging out ===================================#
+    # Logging out
     def logout(self):
         self.wn.destroy()
         from Staff.staff_login_interface import Staffwindow
