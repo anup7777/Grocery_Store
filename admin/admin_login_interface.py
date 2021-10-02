@@ -138,8 +138,10 @@ class Adminwindow:
             messagebox.showerror("Missing data entry", "You can't leave any of the sections empty.")
         else:
             if self.admin_backend.check_login(username, password):
-                    self.admin_window()
+                messagebox.showinfo("Login Successful", f"Welcome Mr. {username}")
+                self.admin_window()
             else:
+
                 messagebox.showerror("Login Credintials didn't matched",
                                          "The given username and password didn't matched")
 

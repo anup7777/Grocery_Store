@@ -161,7 +161,7 @@ class Staff_interface:
         self.changeboard_btn1_img = PhotoImage(file="C:\\store\\updatebtn.png")
         self.changeboard_btn1 = Button(self.navigation_frame, image=self.changeboard_btn1_img,
                                            command=self.updating_credentials, bg="white", fg="black",
-                                           font=("arial", 15), height=25, width=95)
+                                           font=("arial", 15), bd=0, height=25, width=95)
         self.changeboard_btn1.image = self.changeboard_btn1_img
         self.changeboard_btn1.grid(row=7, column=1, columnspan=2, padx=10, pady=22)
 

@@ -100,6 +100,11 @@ class Bill_App:
         cname_label = Label(F0, text="Customer Name", bg="dark orange", font=("times new romen", 18, "bold")).place(x=150, y=3)
         cname_txt = Entry(F0, width=18, textvariable=self.c_name, font="arial 15", bd=7, relief=SUNKEN).grid(row=0, column=2, padx=350, pady=3)
 
+        number_label = Label(F0, text="Phone Number", bg="dark orange", font=("times new romen", 18, "bold")).place(
+            x=750, y=3)
+        number_txt = Entry(F0, width=18, textvariable=self.c_phon, font="arial 15", bd=7, relief=SUNKEN).place(
+            x=950, y=3)
+
 
         # Snack & crackers frame
         F2 = LabelFrame(self.master, bd=5, relief=GROOVE, text="Snacks & Crackers", font=("times new roman", 15, "bold"),
