@@ -70,11 +70,11 @@ class Adminwindow:
         self.lb_password.grid(row=10, column=0, padx=10, pady=5)
 
         # FIRST Entry - USERNAME
-        self.ent_username = Entry(self.admin_frame, bg="white", fg="Grey", font=("arial", 15, "bold"))
+        self.ent_username = Entry(self.admin_frame, bg="white", fg="black", font=("arial", 15, "bold"))
         self.ent_username.grid(row=6, column=0,padx=35, pady=5)
 
         #  SCEOND Entry - PASSWORD
-        self.ent_pass = Entry(self.admin_frame, bg="white", fg="Grey", font=("arial", 15, "bold"), show="")
+        self.ent_pass = Entry(self.admin_frame, bg="white", fg="black", font=("arial", 15, "bold"), show="")
         self.ent_pass.grid(row=11, column=0, padx=35, pady=5)
 
 

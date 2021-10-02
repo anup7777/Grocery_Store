@@ -404,21 +404,37 @@ class Bill_App:
 
         #Button_Frame
 
-        btn_frame = Frame(F7, bd=7, relief=GROOVE)
-        btn_frame.place(x=910, y=10, width=480, height=115)
+        self.total_btn_img = PhotoImage(file="C:\\store\\totalbtn.png")
+        self.total_button = Button(self.master, image=self.total_btn_img, bg='orange', fg="black",
+                                     activebackground="#73C2FB",
+                                     activeforeground="indigo", cursor="hand2", font=("Comic Sans MS", 14, "bold"),
+                                     height=37, width=145, bd=0, command=self.total, relief=FLAT, overrelief=RIDGE)
+        self.total_button.image = self.total_btn_img
+        self.total_button.place(x=950, y=530)
 
-        total_btn = Button(btn_frame, command=self.total, text="Total", bg="dark orange", bd=5, fg="black", pady=15, width=6,
-                           font="arial 12 bold").grid(row=0, column=0, padx=15, pady=15)
+        self.genbill_btn_img = PhotoImage(file="C:\\store\\generatebill.png")
+        self.genbill_button = Button(self.master, image=self.genbill_btn_img, bg='orange', fg="black",
+                                   activebackground="#73C2FB",
+                                   activeforeground="indigo", cursor="hand2", font=("Comic Sans MS", 14, "bold"),
+                                   height=37, width=145, bd=0, command=self.bill_area, relief=FLAT, overrelief=RIDGE)
+        self.genbill_button.image = self.genbill_btn_img
+        self.genbill_button.place(x=1150, y=530)
 
-        genbill_btn = Button(btn_frame, text="Generatebill", command=self.bill_area, bg="dark orange", bd=5, fg="black",
-                             pady=10, width=8, font="arial 12 bold").grid(row=0, column=1, padx=15, pady=15)
+        self.clear_btn_img = PhotoImage(file="C:\\store\\clearbtn.png")
+        self.clear_button = Button(self.master, image=self.clear_btn_img, bg='orange', fg="black",
+                                     activebackground="#73C2FB",
+                                     activeforeground="indigo", cursor="hand2", font=("Comic Sans MS", 14, "bold"),
+                                     height=37, width=145, bd=0, command=self.clear_data, relief=FLAT, overrelief=RIDGE)
+        self.clear_button.image = self.clear_btn_img
+        self.clear_button.place(x=950, y=610)
 
-        clear_btn = Button(btn_frame, text="Clear", command=self.clear_data, bg="dark orange", bd=5, fg="black", pady=15,
-                           width=4, font="arial 12 bold").grid(row=0, column=2, padx=15, pady=15)
-
-        exit_btn = Button(btn_frame, text="Exit", command=self.exit_app, bg="dark orange", bd=5, fg="black", pady=15, width=3,
-                          font="arial 12 bold").grid(row=0, column=3, padx=15, pady=15)
-
+        self.exit_btn_img = PhotoImage(file="C:\\store\\exitbtn.png")
+        self.exit_button = Button(self.master, image=self.exit_btn_img, bg='orange', fg="black",
+                                   activebackground="#73C2FB",
+                                   activeforeground="indigo", cursor="hand2", font=("Comic Sans MS", 14, "bold"),
+                                   height=37, width=145, bd=0, command=self.exit_app, relief=FLAT, overrelief=RIDGE)
+        self.exit_button.image = self.clear_btn_img
+        self.exit_button.place(x=1150, y=610)
 
 
         self.welcome_bill()
