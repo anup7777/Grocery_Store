@@ -1,3 +1,7 @@
+<h1 align="center">
+  <font> Grocery Store System </font>
+</h1>
+
 This is a simple project entitled as "Grocery Store System", which is a system created mainly with the motive to provide  an online interface to the grocery stores for 
 their easy and smooth operation through online. This is a group project made by the group "The Admirals", which includes 5 group members. This project is made by using 
 python programming language for the frontend part and using MYSQL for the backend part. Also Agile sprint methodology has been used for this project. Developing a system 
