@@ -7,6 +7,8 @@ from PIL import Image,ImageTk
 from admin.admin_login_interface import Adminwindow
 from User.user_login_interface import Userwindow
 from Staff.staff_login_interface import Staffwindow
+# main window for running purpose
+#
 
 class Firstwindow:
 
