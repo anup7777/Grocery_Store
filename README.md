@@ -10,7 +10,7 @@ in this system, one is for the admin, another for the users and the last one for
 of customers,staff and the products availabe. The customers have to first get registerd into the system by getting the admin's approval then only the customer can  get 
 logged into the system. Once a customer is logged in,  they can purchase the goods and also can  update their credentials. The staff also has to get registered in system 
 with admin confirmation and then login into system. After logging in, staff can generate bill of a customer by simply entering the name and number of customer and can also
-update his/her credentials. This is the summarized functionality of this system. The following are the screenshoots of the windows of this system :
+update his/her credentials. This is the summarized functionality of this system. Below mentioned are the screenshots of grocery store system.
 
 
 ![1](https://user-images.githubusercontent.com/78782394/135725434-94961160-9b1d-4406-89c9-6a8a2cc6b0d2.PNG)
